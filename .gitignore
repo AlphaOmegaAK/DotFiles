@@ -1,0 +1,10 @@
+.env
+.vscode
+.idea
+.DS_STORE
+.eslintcache
+npm_debug.log
+node_modules
+
+out/
+.idea
