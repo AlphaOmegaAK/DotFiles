@@ -59,11 +59,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
  
 [_LOWER] = LAYOUT( \
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,     KC_F5,       KC_F6,                        KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, \
-  KC_TAB,  KC_MPRV, KC_MNXT, KC__VOLUP, KC__VOLUP,   KC_MPLY,                      KC_UP,   KC_DOWN, KC_LEFT, KC_RIGHT,KC_EQL,  KC_BSLS, \
-  KC_ESC,  KC_UNDS, KC_EXLM, KC_AMPR,   KC_SCLN,     KC_DQUO,                      KC_LCBR, KC_LBRC, KC_LPRN, KC_PLUS, KC_PERC, KC_QUES, \
-  KC_LSFT, KC_TILD, KC_GRV,  KC_PIPE,   KC_COLN,     KC_QUOT, _______,    KC_ENT,  KC_RCBR, KC_RBRC, KC_RPRN, KC_MINS, KC_SLSH, KC_ASTR, \
-                            KC_LCTRL,   KC_LCMD,     KC_LOPT, KC_SPC,     KC_BSPC, KC_COPY,  KC_PSTE, KC_UNDO \
+  KC_F1,   KC_F2,   KC_F3,   KC_F4,       KC_F5,       KC_F6,                        KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, \
+  KC_TAB,  KC_MPRV, KC_MNXT, KC__VOLDOWN, KC__VOLUP,   KC_MPLY,                      KC_UP,   KC_DOWN, KC_LEFT, KC_RIGHT,KC_EQL,  KC_BSLS, \
+  KC_ESC,  KC_UNDS, KC_EXLM, KC_AMPR,     KC_SCLN,     KC_DQUO,                      KC_LCBR, KC_LBRC, KC_LPRN, KC_PLUS, KC_PERC, KC_QUES, \
+  KC_LSFT, KC_TILD, KC_GRV,  KC_PIPE,     KC_COLN,     KC_QUOT, _______,    KC_ENT,  KC_RCBR, KC_RBRC, KC_RPRN, KC_MINS, KC_SLSH, KC_ASTR, \
+                            KC_LCTRL,     KC_LCMD,     KC_LOPT, KC_SPC,     KC_BSPC, KC_COPY,  KC_PSTE, KC_UNDO \
 ),
 
 
