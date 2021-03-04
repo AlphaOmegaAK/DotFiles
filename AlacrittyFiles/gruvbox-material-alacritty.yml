@@ -1,16 +1,4 @@
-env:
-  LC_ALL: en_US.UTF-8
-  LANG: en_US.UTF-8
-  TERM: alacritty
-
-shell:
-  program: /bin/zsh
-  args:
-    - -l
-    - -c
-    - "tmux"
-
-  # The definition of color schemes.
+# The definition of color schemes.
 schemes:
   gruvbox_material_hard_dark: &gruvbox_material_hard_dark
     primary:
@@ -146,52 +134,4 @@ schemes:
       white:   '0xe6d5ae'
 
 # Apply the color scheme.
-colors: *gruvbox_material_hard_dark
-
-cursor:
-  text: '#21130d'
-  cursor: '#abdbe3'
-
-draw_bold_text_with_bright_colors: true
-
-
-# Window Decorations
-window:
-  dimensions:
-    columns: 100
-    lines: 50
-  #decorations: none
-  decorations: full
-
-font:
-  normal:
-    #family: "Fira Mono"
-    family: JetBrainsMono Nerd Font
-  size: 13.0
-  glyph_offset:
-    y: 1
-  use_thi_strokes: true
-
-
-
-key_bindings:
-  - { key: V,         mods: Control,      mode: ~Alt,   action: Paste  }
-  - { key: C,         mods: Control,      mode: ~Alt,   action: Copy   }
-  - { key: Q,         mods: Control,                    action: Quit   }
-  - { key: C,         mods: Control|Shift,              chars: "\x03" }
-  #- { key: Key0,      mods: Control,                    action: ResetFontSize  }
-  #- { key: Equals,    mods: Control,                    action: IncreaseFontSize  }
-  #- { key: Subtract,  mods: Control,                    action: DecreaseFontSize  }
-  # Use | to signify a combination of modifiers (mods)
-  # Google VirtualKeyCode to hexCode equivelants to keys
-  
-selection:
-  save_to_clipboard: true
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-
-mouse:
-  double_click: {threshold: 300}
-  triple_click: {threshold: 300}
- 
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+colors: *gruvbox_material_medium_dark
