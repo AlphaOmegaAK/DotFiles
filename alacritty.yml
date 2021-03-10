@@ -154,6 +154,7 @@ cursor:
 
 draw_bold_text_with_bright_colors: true
 
+background_opacity: 0.95
 
 # Window Decorations
 window:
@@ -165,8 +166,8 @@ window:
 
 font:
   normal:
-    #family: "Fira Mono"
-    family: JetBrainsMono Nerd Font
+    family: "Fira Mono"
+    #family: JetBrainsMono Nerd Font
   size: 13.0
   glyph_offset:
     y: 1
