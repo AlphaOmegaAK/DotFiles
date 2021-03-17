@@ -161,17 +161,17 @@ window:
   dimensions:
     columns: 100
     lines: 50
-  #decorations: none
-  decorations: full
+  decorations: none
+  #decorations: full
 
 font:
   normal:
     family: "Fira Mono"
-    #family: JetBrainsMono Nerd Font
+    #family: "JetBrainsMono Nerd Font"
   size: 13.0
   glyph_offset:
     y: 1
-  use_thi_strokes: true
+  use_thin_strokes: true
 
 
 
