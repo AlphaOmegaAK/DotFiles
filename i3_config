@@ -257,6 +257,7 @@ bindsym $mod+Print exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/shots/'k
 #  =========================== Start-ups ======================================
 exec xrandr --output HDMI-0 --auto --right-of DP-1
 exec --no-startup-id feh --bg-fill ~/Pictures/darkLeather.jpg
+exec compton
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
 exec_always --no-startup-id exec alaritty
 exec_always --no-startup-id exec /opt/firefix/firefox

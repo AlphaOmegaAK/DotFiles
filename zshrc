@@ -10,7 +10,8 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="spaceship"
 
 
 # Uncomment the following line to enable command auto-correction.
@@ -38,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 #
-#-------------------- ALIAS'S --------------
+#-------------------- ALIAS' --------------
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -56,12 +57,21 @@ alias cddf="cd ~/Code-Directory/DotFiles && ls"
 alias cdcc="cd ~/Code-Directory/Code_Challenges && ls"
 alias cddl="cd ~/Downloads && ls"
 
-alias vimconf="nvim ~/.vim/vimrc"
-alias zshconf="nvim ~/.zshrc"
-alias alacconf="nvim ~/.config/alacritty/alacritty.yml"
-alias vconf="v ~/.config/nvim"
+alias la="ls -a"
+alias lsd="ls -d .*"
+#alias laa='ls -a | grep "^\."'
+# ----- Config Alias'
+alias vimconf="neovim ~/.vim/vimrc"
+alias zshconf="neovim ~/.zshrc"
+alias alacconf="neovim ~/.config/alacritty/alacritty.yml"
+alias vconf="neovim ~/.config/nvim"
+alias i3conf="neovim ~/.config/i3/config" 
+alias tmuxconf="neovim ~/.tmux.conf"
+
 alias del="rm -rf"
-alias v="/usr/bin/neovim"
+alias v="/usr/local/bin/neovim"
+
+
 
 alias py="python3"
 alias no="node"
@@ -79,7 +89,7 @@ openup ()
       *.tar.gz)    tar xzf $1   ;;
       *.tar.xz)    tar xJf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
@@ -87,7 +97,7 @@ openup ()
       *.zip)       unzip $1     ;;
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted with ex()" ;;
+      *)           echo "'$1' cannot be extracted with openup()" ;;
     esac
   else
     echo "'$1' not a valid file"
@@ -143,3 +153,6 @@ else
 fi
 unset __conda_setup
 
+
+
+source "/home/alpha/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
