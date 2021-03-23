@@ -4,7 +4,7 @@ env:
   TERM: alacritty
 
 shell:
-  program: /bin/zsh
+  program: /bin/fish
   args:
     - -l
     - -c
@@ -154,7 +154,7 @@ cursor:
 
 draw_bold_text_with_bright_colors: true
 
-background_opacity: 0.95
+background_opacity: 0.85
 
 # Window Decorations
 window:
@@ -166,8 +166,9 @@ window:
 
 font:
   normal:
-    family: "Fira Mono"
+    #family: "Fira Mono"
     #family: "JetBrainsMono Nerd Font"
+          family: "Fira Code"
   size: 13.0
   glyph_offset:
     y: 1

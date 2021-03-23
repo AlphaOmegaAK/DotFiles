@@ -48,9 +48,6 @@ bindsym XF86AudioPause exec playerctl stop
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous 
 
-#bindsym $mod+Ctrl+space exec playerctl pause 
-#bindsym $mod+Ctrl+space exec playerctl play
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -178,8 +175,11 @@ workspace $ws5 output $m2
 # ========================== Workspace Assignments ============================
 # Get Class, Instance values : Open App, Term: #xprop | grep WM_CLASS, click app, term output
 # First is Instance, 2nd is class : WM_CLASS(String) = "Navigator", "firefox"
+
+
 # 1. Web
-assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
+assign [class="Firefox" instance="Navigator"] $ws1
+#assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
 assign [class="Google-chrome" instance="google-chrome"] $ws1
 
 # 2. Dev
@@ -194,7 +194,7 @@ assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws3
 assign [class="Mailspring" instance="mailspring"] $ws4
 
 # 5. Misc   
-assign [class="Spotify" instance="spotify" title="Spotify"] $ws4
+assign [class="Spotify" instance="spotify"] $ws4
 
 
 # --- Jump back to previous workspace with same key used to jump to new workspace
@@ -205,6 +205,8 @@ workspace_auto_back_and_forth yes
 focus_follows_mouse no
 focus_on_window_activation smart
 # =============================================================================
+
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -242,10 +244,10 @@ bindsym $mod+r mode "resize"
 
 
 # Print screen focused window
-bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/shots/'
+bindsym F6 exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/shots/'
 
 # Print screen entire view
-bindsym $mod+Print exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/shots/'kk
+bindsym F7 exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/shots/'kk
 
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -257,7 +259,7 @@ bindsym $mod+Print exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/shots/'k
 #  =========================== Start-ups ======================================
 exec xrandr --output HDMI-0 --auto --right-of DP-1
 exec --no-startup-id feh --bg-fill ~/Pictures/darkLeather.jpg
-exec compton
+exec picom &
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
 exec_always --no-startup-id exec alaritty
 exec_always --no-startup-id exec /opt/firefix/firefox
@@ -267,7 +269,7 @@ exec_always --no-startup-id exec /opt/firefix/firefox
 # =============================== Key Bindings ================================
 # =============================================================================
 bindsym F1 exec alacritty
-bindsym F2 exec /opt/firefox/firefox
+bindsym F2 exec firefox
 bindsym F3 exec nautilus ~/
 bindsym F4 exec mailspring
 bindsym F5 exec nautilus ~/Downloads
