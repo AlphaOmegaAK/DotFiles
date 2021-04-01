@@ -37,4 +37,5 @@ alias cdbs="cd ~/Code/Scripts && ls"
 alias cddf="cd ~/Code/DotFiles && ls"
 alias cdcc="cd ~/Code/Code_Challenges && ls"
 alias cddl="cd ~/Downloads && ls"
+alias cdms="cd ~/Code/Misc && ls"
 
