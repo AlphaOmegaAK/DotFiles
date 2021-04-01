@@ -5,6 +5,7 @@
 .eslintcache
 npm_debug.log
 node_modules
+Nvim_Config
 
 out/
 .idea
