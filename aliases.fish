@@ -3,6 +3,12 @@ alias cl="clear"
 
 alias so="source "
 
+alias config="cd ~/.config && ls"
+alias i3conf="nvim ~/.config/i3/config"
+alias vconf="nvim ~/.config/nvim/init.vim"
+alias fishconf="nvim ~/.config/fish/config.fish"
+alias alacconf="nvim ~/.config/alacritty/alacritty.yml"
+alias tmuxconf="nvim ~/.tmux.conf"
 
 alias g ="git "
 alias gs="git status -sb"
