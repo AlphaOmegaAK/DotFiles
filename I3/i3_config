@@ -29,6 +29,12 @@ font pango:Hack, FontAwesome 10
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# Sound Management
+exec --no-startup-id gnome-sound-applet
+
+# GTK Theme
+exec --no-startup-id gnome-settings-daemon
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -60,6 +66,8 @@ floating_modifier $mod
 bindsym $mod+q kill
 
 set $dmenu_launcher dmenu_run -i -nb '#393939' -nf '#48B685' -sb '#dfefe2' -sf '#393939'
+
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec $dmenu_launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
@@ -125,14 +133,15 @@ bindsym $mod+a focus parent
 set $ws1 "1⁞ 〄 Web"
 set $ws2 "2⁞  Dev"
 set $ws3 "3⁞  Files"
-set $ws4 "4⁞  Misc"
+set $ws4 "4⁞  Misc"
 set $ws5 "5⁞ Mail"
 #set $ws6 "6 "
 #set $ws7 "7 "
 #set $ws8 "8" ✉
 #set $ws9 "9"
 #set $ws10 "10"
-# ➊ ➋ ➌ ➍ ➎ ➏ ➐
+# ➊ ➋ ➌ ➍ ➎ ➏ ➐     
+
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -170,7 +179,6 @@ workspace $ws4 output $m1
 
 workspace $ws2 output $m2
 workspace $ws3 output $m2
-workspace $ws4 output $m2
 workspace $ws5 output $m2
 # ========================== Workspace Assignments ============================
 # Get Class, Instance values : Open App, Term: #xprop | grep WM_CLASS, click app, term output
@@ -204,6 +212,23 @@ workspace_auto_back_and_forth yes
 #xrandr --output HDMI-0 --auto --right-of DP-1
 focus_follows_mouse no
 focus_on_window_activation smart
+
+
+for_window [window_role="pop-up"] floating enable
+
+# ----- GAPS -----
+for_window [class=".*"] border pixel 2
+
+gaps inner 10
+#gaps outer 5
+# Only enable gaps on a workspace when there is at least one container
+#smart_gaps on
+
+# Only enable outer gaps when there is exactly one container
+# smart_gaps inverse_outer
+
+#gaps inner all set 5px
+#gaps out
 # =============================================================================
 
 
@@ -259,10 +284,14 @@ bindsym F7 exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/shots/'kk
 #  =========================== Start-ups ======================================
 exec xrandr --output HDMI-0 --auto --right-of DP-1
 exec --no-startup-id feh --bg-fill ~/Pictures/dark_fluid.jpg
-exec picom &
+exec picom --experimental-backends &
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
-exec_always --no-startup-id exec alaritty
-exec_always --no-startup-id exec /opt/firefix/firefox
+exec --no-startup-id exec alaritty
+exec --no-startup-id exec /opt/firefix/firefox
+
+exec --no-startup-id gnome-settings-daemon
+
+
 
 
 # =============================================================================
@@ -278,7 +307,19 @@ bindsym F5 exec nautilus ~/Downloads
 bindsym Mod1+Tab     exec --no-startup-id i3-msg workspace back_and_forth   
 bindsym --no-startup-id $mod+Control+l exec i3lock -i ~/Pictures/Wallpapers/LockScreenWP.png -c 1c1e1f
 
+set $mode_power power
+bindsym Mod1+Control+l mode "$mode_power"
+mode "$mode_power" {
+    bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock 
+    bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout
+    bindsym s mode "default", exec --no-startup-id $HOME/.config/i3/i3exit suspend
+    bindsym h mode "default", exec --no-startup-id $HOME/.config/i3/i3exit hibernate
+    bindsym r mode "default", exec --no-startup-id $HOME/.config/i3/i3exit reboot
+    bindsym p mode "default", exec --no-startup-id $HOME/.config/i3/i3exit shutdown
 
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 
 
@@ -292,29 +333,37 @@ bindsym --no-startup-id $mod+Control+l exec i3lock -i ~/Pictures/Wallpapers/Lock
 
 
 
-for_window [class=".*"] border pixel 2
-for_window [window_role="pop-up"] floating enable
 
-#set $bgcolor
+set $bgcolor #181A1B
 #set $fgcolor
-set $txtcolor 35a0a6
-#set $txtcolor #0A0B0B
+#set $txtcolor #35a0a6
+set $txtcolor #48B685
+set $client_txt_color #BDAE93
+set $client_brdr_clr #458588
+set $client_child_brdr_clr   #458588
+
+
+#set $client_txt_color 
+
+##A89780 #D5c4a1
+
 #set $urgent
 
-# colour of               border,  backgrd, text,    indictr,  child_brdr
-#client.focused           #bf616a  #2f343f  #d8dee8  #bf616a   #d8dee8
-#client.focused_inactive  #2f343f  #2f343f  #d8dee8  #2f343f   #2f343f
-#client.unfocused         #2f343f  #2f343f  #d8dee8  #2f343f   #2f343f
-#client.urgent            #2f343f  #2f343f  #d8dee8  #2f343f   #2f343f
-#client.placeholder       #2f343f  #2f343f  #d8dee8  #2f343f   #2f343f
+# colour of               border,  backgrd, text,              indictr,  child_brdr
+client.focused            $client_brdr_clr  #2f343f  $client_txt_color  $client_brdr_clr   $client_child_brdr_clr
+client.focused_inactive   #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
+#client.unfocused         #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
+#client.urgent            #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
+#client.placeholder       #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
 #client.background        #2f343f
 
 
-client.focused            #6c71c4  #6c71c4  #fdf6e3  #6c71c4
-client.focused_inactive   #073642  #073642  #eee8d5  #6c71c4
-client.unfocused          #073642  #073642  #93a1a1  #586e75
-client.urgent             #d33682  #d33682  #fdf6e3  #dc322f
+#client.focused            #6c71c4  #6c71c4  #fdf6e3  #6c71c4
+#client.focused_inactive   #073642  #073642  #eee8d5  #6c71c4
+#client.unfocused          #073642  #073642  #93a1a1  #586e75
+#client.urgent             #d33682  #d33682  #fdf6e3  #dc322f
 
+## ##272B34 #0497d8 #8DDDD0 #293436 #181A1B
 
 
 # =============================================================================
@@ -329,8 +378,8 @@ bar {
     font pango:Hack, FontAwesome 12
 
     colors {
-        background #181A1B
-        statusline #$txtcolor 
+        background $bgcolor
+        statusline $txtcolor
 
     }
 }
@@ -343,9 +392,8 @@ bar {
 #⋰ ⥋ ⥦ ♦︎
 
     colors {
-        background #181A1B
-        statusline #$txtcolor
-###272B34 #0497d8 #8DDDD0 #293436
+        background $bgcolor
+        statusline $txtcolor
 
     }
     #status_command i3blocks
