@@ -1,11 +1,2 @@
-.env
-.vscode
-.idea
-.DS_STORE
-.eslintcache
-npm_debug.log
-node_modules
-Nvim_Config/
+Nvim-Config
 
-out/
-.idea

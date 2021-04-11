@@ -13,14 +13,19 @@ $ pwd
 /Users/(Your User)/(Parent folder of dotfiles)/dotfiles
 
 # Be sure to use an absolute path
-$ ln -nfs /Users/(YourUser)/(Paremt folder of dotfiles)/.gitconfig /User/(Your User)/.gitconfig
+$ ln -nfs /Users/(YourUser)/(Parent folder of dotfiles)/.gitconfig /User/(Your User)/.gitconfig
 
 - "-s" creates a symbolic link instead of a hard link
 - "-f" continues with other symlinking when an error occurs
 - "-n" avoids symlinking a symlink
 
 
-List of DotFiles and their required locations/symlinks
+## List of DotFiles and their required locations/symlinks
+
+===== ~/* ===== 
+<FILE>                <LOCATION>
+tmux.conf        >    ~/.tmux.conf
+taskrc           >    ~/.taskrc
 
 
 ===== I3/* ===== 
