@@ -6,5 +6,6 @@
 npm_debug.log
 node_modules
 out/
+target/
 .idea
 
