@@ -12,7 +12,7 @@ set msgs \
    "Dont't worry if it doesn't work right.If everything did, you'd be out of a job." \
    "Without requirements or design, programming is the art of adding bugs to an empty text file" \
    "I don't care if it works on your machine! We are not shipping your machine! - Vidiu Platon" \
-   "Software undergoes beta testing shortly before it\'s released -Beta is latin for still doesn\'t work" \
+   "Software undergoes beta testing shortly before it's released - Beta is latin for still doesn't work" \
    "If debudding is the process of removing software bugs, then programming must be the process of putting them in. - Edsger W. Dijkstra" \
    "The computer was born to solve problems that did not exist before." \
    "Always code as if the guy who ends up maintaning your code will be a violent psychopath who knows where you live. - Rick Osborne" \
