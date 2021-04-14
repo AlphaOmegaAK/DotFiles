@@ -1,11 +1,11 @@
 function fish_greeting
     printf (set_color F70)"
 WELCOME
-.--. .---..       .          .    .--..---.
-|   :|     \     /          / \   |   ) |  
-|   ||---   \   /   ____   /___\  |--'  |  
-|   ;|       \ /          /     \ |  \  |  
-'--' '---'    '          '       `'   ` '  
+    .--. .---..       .          .    .--..---.
+    |   :|     \     /          / \   |   ) |  
+    |   ||---   \   /   ____   /___\  |--'  |  
+    |   ;|       \ /          /     \ |  \  |  
+    '--' '---'    '          '       `'   ` '  
 "
 set msgs \
    "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code. - Dan Salomon" \
