@@ -205,8 +205,7 @@ assign [class="Code" instance="code"] $ws2
 assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws3
 
 # 4. Misc   
-#assign [class="Spotify" instance="spotify"] $ws4
-#assign [class="spotify" instance="Spotify"] $ws4
+assign [class="libreoffice-startcenter" instance="libreoffice"] $ws4
 
 # 5. Mail
 assign [class="Mailspring" instance="mailspring"] $ws5
