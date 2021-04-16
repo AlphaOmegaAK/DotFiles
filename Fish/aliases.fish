@@ -39,4 +39,5 @@ alias cddf="cd ~/Code/DotFiles"
 alias cdcc="cd ~/Code/Code_Challenges"
 alias cddl="cd ~/Downloads"
 alias cdms="cd ~/Code/Misc"
+alias cdjob="cd ~/Documents/Career/Interviews"
 

@@ -1,4 +1,5 @@
 starship init fish | source
+set -x LANG en_US.UTF-8
 
 # Colored Man Pages
 set -xU LESS_TERMCAP_md (printf "\e[01;31m")
