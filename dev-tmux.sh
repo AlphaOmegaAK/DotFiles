@@ -3,6 +3,7 @@ SESSION="Development"
 
 tmux new-session -d -s $SESSION -n "Code" \;    \
     new-window -n "Output" -t $SESSION\;        \
+    new-window -n "Terminal" -t $SESSION\;      \
     new-window -n "Server" -t $SESSION\;        \
 
 
