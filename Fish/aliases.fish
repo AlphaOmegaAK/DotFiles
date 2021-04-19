@@ -1,6 +1,7 @@
 alias v="nvim"
 alias cl="clear"
 alias chmox="chmod +x"
+alias echopath="echo '$PATH' | tr ':' '\n' | nl"
 
 alias so="source "
 
@@ -40,3 +41,8 @@ alias cdcc="cd ~/Code/Code_Challenges"
 alias cddl="cd ~/Downloads"
 alias cdms="cd ~/Code/Misc"
 
+alias dev="~/Code/DotFiles/dev-tmux.sh"
+
+alias pwroff="shutdown now"
+alias pwrcl="shutdown -c"
+alias reboot="shutdown -r"
