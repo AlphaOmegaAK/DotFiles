@@ -175,11 +175,12 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 set $m1 DP-1 
 set $m2 HDMI-0
 workspace $ws1 output $m1
+workspace $ws3 output $m1
 workspace $ws4 output $m1 
 
 workspace $ws2 output $m2
-workspace $ws3 output $m2
 workspace $ws5 output $m2
+workspace $ws6 output $m2
 # ========================== Workspace Assignments ============================
 # Get Class, Instance values : Open App, Term: #xprop | grep WM_CLASS, click app, term output
 # First is Instance, 2nd is class : WM_CLASS(String) = "Navigator", "firefox"
@@ -279,11 +280,11 @@ bindsym $mod+r mode "resize"
 
 
 # Print screen focused window
-bindsym F6 exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/shots/'
+set $DATE='%m%d%Y'
+bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/shots/'
 
 # Print screen entire view
-bindsym F7 exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/shots/'kk
-
+bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/shots/'
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::::::::: Customization ::::::::::::::::::::::::::::::::: 
@@ -296,9 +297,6 @@ exec xrandr --output HDMI-0 --auto --right-of DP-1
 exec --no-startup-id feh --bg-fill ~/Pictures/dark_fluid.jpg
 exec picom --experimental-backends &
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
-exec --no-startup-id exec alaritty
-exec --no-startup-id exec /opt/firefix/firefox
-
 exec --no-startup-id gnome-settings-daemon
 
 
