@@ -41,6 +41,7 @@ alias cdcc="cd ~/Code/Code_Challenges"
 alias cddl="cd ~/Downloads"
 alias cdms="cd ~/Code/Misc"
 
+alias intellij="intellij-idea-community"
 alias dev="~/Code/DotFiles/dev-tmux.sh"
 
 alias pwroff="shutdown now"
