@@ -69,9 +69,13 @@ set $dmenu_launcher dmenu_run -i -nb '#393939' -nf '#48B685' -sb '#dfefe2' -sf '
 
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec $dmenu_launcher
+#bindsym $mod+d exec $dmenu_launcher
+#bindsym $mod+d exec rofi -show run  -lines 3 -eh -font "Menlo 11" -bw 3 -display-run "> " 
+
+
+
+
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-#bindsym $mod+d exec --no-startup-id  rofi show combi -modi combi -show-icons -theme "gruvbox-dark-hard" -font "mono 14"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -130,19 +134,18 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1⟫ 〄 Web"
+set $ws1 "1⟫ 〄Web"
 set $ws2 "2⟫  Dev"
-set $ws3 "3⟫  Files"
+set $ws3 "3⟫  Files"
 set $ws4 "4⟫  Misc"
 set $ws5 "5⟫  Mail"
-set $ws6 "6⟫ ₪ Social"
+set $ws6 "6⟫ Social"
 #set $ws7 "7 "
 #set $ws8 "8" ✉
 #set $ws9 "9"
 #set $ws10 "10"
 # ➊ ➋ ➌ ➍ ➎ ➏ ➐     ↈ ⤐
-
-
+#     ₪
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -215,6 +218,12 @@ assign [class="Mailspring" instance="mailspring"] $ws5
 for_window [class="Spotify"] move to workspace $ws6
 assign [class="discord" instance="discord"] $ws6
 
+bindsym F1 exec alacritty
+bindsym F2 exec google-chrome
+bindsym Shift+F2 exec firefox
+bindsym F3 exec nautilus ~/
+bindsym F4 exec mailspring
+bindsym F5 exec nautilus ~/Downloads
 
 # --- Jump back to previous workspace with same key used to jump to new workspace
 workspace_auto_back_and_forth yes
@@ -305,11 +314,6 @@ exec --no-startup-id gnome-settings-daemon
 # =============================================================================
 # =============================== Key Bindings ================================
 # =============================================================================
-bindsym F1 exec alacritty
-bindsym F2 exec firefox
-bindsym F3 exec nautilus ~/
-bindsym F4 exec mailspring
-bindsym F5 exec nautilus ~/Downloads
 
 # Cycle back & forth last workspace 
 bindsym Mod1+Tab     exec --no-startup-id i3-msg workspace back_and_forth   
@@ -409,3 +413,5 @@ bar {
     font pango:Hack 16
 
 }   
+
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 30 -padding 0 -opacity "55" -font "Fira Mono 10"
