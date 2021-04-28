@@ -5,12 +5,17 @@ alias echopath="echo '$PATH' | tr ':' '\n' | nl"
 
 alias so="source "
 
+alias todo="nvim ~/Documents/todo.md"
+
 alias config="cd ~/.config"
 alias i3conf="nvim ~/.config/i3/config"
 alias vconf="nvim ~/.config/nvim/init.vim"
 alias fishconf="nvim ~/.config/fish/config.fish"
 alias alacconf="nvim ~/.config/alacritty/alacritty.yml"
 alias tmuxconf="nvim ~/.tmux.conf"
+alias iscript="cd ~/Code/Scripts/ProjectScripts/OS_Install_Script"
+
+alias nvdir="cd ~/Code/DotFiles/Nvim-Config"
 
 alias g ="git "
 alias gs="git status -sb"
