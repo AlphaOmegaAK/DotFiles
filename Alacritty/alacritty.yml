@@ -4,7 +4,7 @@ env:
   TERM: alacritty
 
 shell:
-  program: /bin/fish
+  program: /usr/bin/fish 
   args:
     - -l
     - -c
@@ -166,9 +166,10 @@ window:
 
 font:
   normal:
-    #family: "Fira Mono"
-    #family: "JetBrainsMono Nerd Font"
-    family: "Fira Code"
+    family: "Fira Mono"
+    # family: "JetBrainsMono Nerd Font"
+    #family: "Fira Code"
+    #family: "Iosevka Term Light"
   bold:
     family: "Fira Code"
     style: Regular
