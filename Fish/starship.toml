@@ -1,0 +1,62 @@
+# Place/Link in ~/.config/starship.toml
+# Change default configuration file location with STARSHIP_CONFIG environment variable :
+#	export STARSHIP_CONFIG=~/.starship/config.toml
+# By default starship logs warnings and errors into a file named ~/.cache/starship
+
+# --- Cache
+#By default starship logs warnings and errors into a file named 
+#~/.cache/starship/session_${STARSHIP_SESSION_KEY}.log, 
+#where the session key is corresponding to a instance of your terminal. 
+#This, however can be changed using the STARSHIP_CACHE environment variable:
+
+#export STARSHIP_CACHE=~/.starship/cach
+
+
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Replace the ">" symbol in the prompt with better arrow
+[character]
+success_symbol = "[➣](bold green) "
+error_symbol = "[☠](bold red) "
+vicmd_symbol = "[V](bold yellow) "
+# ✗ ➜ ＞⤜ ≻
+
+#[package]
+#disable = true
+
+#[docker_context]
+#format = "via [🐋 $context](blue bold)"
+
+#[directory]
+#truncation_length = 100
+#truncate_to_repo = false
+#style = "yellow"
+#format = "[:$path]($style)[$read_only]($read_only_style) "
+
+#[git_state]
+#disable = true
+
+#[git_branch]
+#disable = true
+
+
+#[git_commit]
+#disable = true
+
+
+#[git_status]
+#disable = true
+
+
+format = """
+$username \
+$hostname \
+$directory \
+$docker_context \
+$symbol
+$character"""
+
+
+

@@ -6,6 +6,7 @@ alias echopath="echo '$PATH' | tr ':' '\n' | nl"
 alias so="source "
 
 alias todo="nvim ~/Documents/todo.md"
+alias joplin="joplin-james-carroll.joplin"
 
 alias config="cd ~/.config"
 alias i3conf="nvim ~/.config/i3/config"
@@ -17,7 +18,7 @@ alias iscript="cd ~/Code/Scripts/ProjectScripts/OS_Install_Script"
 
 alias nvdir="cd ~/Code/DotFiles/Nvim-Config"
 
-alias g ="git "
+alias g="git "
 alias gs="git status -sb"
 alias gaa="git add -A"
 alias gcmsg="git commit -m "

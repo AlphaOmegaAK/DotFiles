@@ -20,7 +20,7 @@ set $mod Mod1
 #
 #font pango:DejaVu Sans Mono 10
 #font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
-font pango:Hack, FontAwesome 10
+font pango:Hack, FontAwesome 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -176,7 +176,7 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 
 # Auto assigning workspaces to specific monitors
 set $m1 DP-1 
-set $m2 HDMI-0
+set $m2 HDMI-1
 workspace $ws1 output $m1
 workspace $ws3 output $m1
 workspace $ws4 output $m1 
@@ -229,7 +229,7 @@ bindsym F5 exec nautilus ~/Downloads
 workspace_auto_back_and_forth yes
 
 
-#xrandr --output HDMI-0 --auto --right-of DP-1
+#xrandr --output HDMI-1 --auto --right-of DP-1
 focus_follows_mouse no
 focus_on_window_activation smart
 
@@ -302,11 +302,15 @@ bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/shots/'
 
 
 #  =========================== Start-ups ======================================
-exec xrandr --output HDMI-0 --auto --right-of DP-1
-exec --no-startup-id feh --bg-fill ~/Pictures/dark_fluid.jpg
+exec xrandr --output HDMI-1 --auto --right-of DP-1
+#exec --no-startup-id feh --bg-fill ~/Pictures/dark_fluid.jpg
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/grey-scale-forest-WP.jpg
 exec picom --experimental-backends &
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
 exec --no-startup-id gnome-settings-daemon
+
+# Feh Presets
+# feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
 
 
@@ -348,8 +352,9 @@ mode "$mode_power" {
 
 set $bgcolor #181A1B
 #set $fgcolor
-#set $txtcolor #35a0a6
-set $txtcolor #48B685
+set $txtcolor #A99888
+#set $txtcolor #8DDDD0
+#set $txtcolor #BDAE93
 set $client_txt_color #BDAE93
 set $client_brdr_clr #458588
 set $client_child_brdr_clr   #458588
@@ -357,7 +362,7 @@ set $client_child_brdr_clr   #458588
 
 #set $client_txt_color 
 
-##A89780 #D5c4a1
+##A89780 #D5c4a1 #35a0a6 #48B685
 
 #set $urgent
 
@@ -369,12 +374,6 @@ client.focused_inactive   #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
 #client.placeholder       #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
 #client.background        #2f343f
 
-
-#client.focused            #6c71c4  #6c71c4  #fdf6e3  #6c71c4
-#client.focused_inactive   #073642  #073642  #eee8d5  #6c71c4
-#client.unfocused          #073642  #073642  #93a1a1  #586e75
-#client.urgent             #d33682  #d33682  #fdf6e3  #dc322f
-
 ## ##272B34 #0497d8 #8DDDD0 #293436 #181A1B
 
 
@@ -385,7 +384,7 @@ client.focused_inactive   #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
 # finds out, if available)
 
 bar {
-    output HDMI-0
+    output HDMI-1
     i3bar_command i3bar
     font pango:Hack, FontAwesome 12
 

@@ -92,4 +92,64 @@
 
 #31363b
 
+client.unfocused        #606060 #303030     #707070
+client.focused_inactive #aaaaaa #000000     #aaaaaa
+client.focused          #e1aa5d #e1aa5d     #000000
+client.urgent           #a0cf5d #000000     #eeeeee
+light: &light
+    primary:
+      background: '#ffffff'
+      foreground: '#4d4d4c'
+    normal:
+      black: '#ffffff'
+      red: '#c82829'
+      green: '#718c00'
+      yellow: '#eab700'
+      blue: '#4271ae'
+      magenta: '#8959a8'
+      cyan: '#3e999f'
+      white: '#1d1f21'
+
+  dark: &dark
+    primary:
+      background: '#000000'
+      foreground: '#ffffff'
+    normal:
+      black: '#000000'
+      red: '#d54e53'
+      green: '#b9ca4a'
+      yellow: '#e6c547'
+      blue: '#7aa6da'
+      magenta: '#c397d8'
+      cyan: '#70c0ba'
+      white: '#eaeaea'
+
+
+!! black
+*color0: #1e1e1e
+*color8: #1e1e1e
+!! red
+*color1: #ff895d
+*color9: #ff895d
+!! green
+*color2: #80ef91
+*color10: #80ef91
+!! yellow
+*color3: #ee2b47
+*color11: #ee2b47
+!! blue
+*color4: #a1d9ff
+*color12: #a1d9ff
+!! magenta
+*color5: #fff1c1
+*color13: #fff1c1
+!! cyan
+*color6: #849561
+*color14: #849561
+!! white
+*color7: #d5eeff
+*color15: #d5eeff
+#a1d9ff
+
+
 

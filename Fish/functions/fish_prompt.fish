@@ -1,4 +1,4 @@
-# Defined in /tmp/.psub.sUbseMLRMl @ line 1
+# Defined in /tmp/.psub.OUVfHGx3eP @ line 1
 function fish_prompt
     switch "$fish_key_bindings"
         case fish_hybrid_key_bindings fish_vi_key_bindings
