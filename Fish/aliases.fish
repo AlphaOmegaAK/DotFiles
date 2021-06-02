@@ -48,7 +48,7 @@ alias cddl="cd ~/Downloads"
 alias cdms="cd ~/Code/Misc"
 
 alias intellij="intellij-idea-community"
-alias dev="~/Code/DotFiles/dev-tmux.sh"
+alias dev="~/Code/DotFiles/Env/dev-tmux.sh"
 
 alias pwroff="shutdown now"
 alias pwrcl="shutdown -c"

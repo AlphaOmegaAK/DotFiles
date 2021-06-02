@@ -14,7 +14,7 @@
 
 
 # Inserts a blank line between shell prompts
-add_newline = false
+add_newline = true
 
 # Replace the ">" symbol in the prompt with better arrow
 [character]
@@ -55,7 +55,7 @@ $username \
 $hostname \
 $directory \
 $docker_context \
-$symbol
+$symbol \
 $character"""
 
 

@@ -71,6 +71,7 @@ set $dmenu_launcher dmenu_run -i -nb '#393939' -nf '#48B685' -sb '#dfefe2' -sf '
 # start dmenu (a program launcher)
 #bindsym $mod+d exec $dmenu_launcher
 #bindsym $mod+d exec rofi -show run  -lines 3 -eh -font "Menlo 11" -bw 3 -display-run "> " 
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 30 -padding 0 -opacity "55" -font "Fira Mono 10"
 
 
 
@@ -230,7 +231,7 @@ workspace_auto_back_and_forth yes
 
 
 #xrandr --output HDMI-1 --auto --right-of DP-1
-focus_follows_mouse no
+focus_follows_mouse yes
 focus_on_window_activation smart
 
 
@@ -239,13 +240,12 @@ for_window [window_role="pop-up"] floating enable
 # ----- GAPS -----
 for_window [class=".*"] border pixel 2
 
+#gaps inner all set 10
 gaps inner 10
-#gaps outer 5
+gaps outer 2
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
 
-# Only enable outer gaps when there is exactly one container
-# smart_gaps inverse_outer
 
 #gaps inner all set 5px
 #gaps out
@@ -306,7 +306,7 @@ exec xrandr --output HDMI-1 --auto --right-of DP-1
 #exec --no-startup-id feh --bg-fill ~/Pictures/dark_fluid.jpg
 exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/grey-scale-forest-WP.jpg
 exec picom --experimental-backends &
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
+exec_always --no-startup-id $HOME/.config/i3/polybar/launch.sh &
 exec --no-startup-id gnome-settings-daemon
 
 # Feh Presets
@@ -413,4 +413,3 @@ bar {
 
 }   
 
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 30 -padding 0 -opacity "55" -font "Fira Mono 10"
