@@ -161,21 +161,23 @@ window:
   dimensions:
     columns: 100
     lines: 50
-  decorations: none
-  #decorations: full
+  #decorations: none
+  decorations: full
 
 font:
   normal:
     #family: "Fira Mono"
     #family: "JetBrainsMono Nerd Font"
     #family: "Fira Code"
-    family: "Iosevka Term Light"
+    #family: "Iosevka Term Light"
+    family: "Consolas"
   bold:
-    family: "Fira Code"
+    #family: "Fira Code"
+    family: "Consolas"
     style: Regular
   italic:
-    family: "Fira Mono"
-    #family: "Consolas"
+    #family: "Fira Mono"
+    family: "Consolas"
     style: Italic
   size: 13.0
   glyph_offset:

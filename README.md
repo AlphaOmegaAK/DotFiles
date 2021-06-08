@@ -25,6 +25,7 @@ $ ln -nfs /Users/(YourUser)/(Parent folder of dotfiles)/.gitconfig /User/(Your U
 ===== ~/* ===== 
 <FILE>                <LOCATION>
 tmux.conf        >    ~/.tmux.conf
+gitmux.conf      >    ~/.gitmux.conf 
 taskrc           >    ~/.taskrc
 
 
@@ -41,7 +42,11 @@ picom.conf>      >   ~/.config/picom.conf
 config.fish      >   ~/.config/fish/config.fish
 fish_variables   >   ~/.config/fish/fish_variables
 aliases/fish     >   ~/.config/fish/aliases.fish
+functions.fish 	 >   ~/.config/fish/functions/cd.fish	
 
 
 ===== Alacritty/* =====
 alacritty.yml    >   ~/.config/alacritty/alacritty.yml
+
+===== Nvim-Config/* =====
+Nvim-Congig	 > ~/.config/nvim
