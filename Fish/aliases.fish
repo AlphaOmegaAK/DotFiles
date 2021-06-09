@@ -30,6 +30,8 @@ alias grim="git rebase -i master"
 alias lsd="ls -d .*"
 alias la="ls -a"
 
+alias rmd="rm -rf"
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias dots="nvim ~/Code/System/DotFiles/"

@@ -19,4 +19,5 @@ dist/
 typings/
 .npm
 *.class
-
+jsconfig.json
+tsconfig.json
