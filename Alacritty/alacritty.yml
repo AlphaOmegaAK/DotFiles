@@ -169,8 +169,8 @@ font:
     #family: "Fira Mono"
     #family: "JetBrainsMono Nerd Font"
     #family: "Fira Code"
-    #family: "Iosevka Term Light"
-    family: "Consolas"
+    family: "Iosevka"
+    #family: "Consolas"
   bold:
     #family: "Fira Code"
     family: "Consolas"
@@ -179,7 +179,7 @@ font:
     #family: "Fira Mono"
     family: "Consolas"
     style: Italic
-  size: 13.0
+  size: 12.0
   glyph_offset:
     y: 1
   use_thin_strokes: true
