@@ -128,9 +128,6 @@ light: &light
       white: '#eaeaea'
 
 
-!! black
-*color0: #1e1e1e
-*color8: #1e1e1e
 !! red
 *color1: #ff895d
 *color9: #ff895d
@@ -156,3 +153,12 @@ light: &light
 
 
 
+#a3be8c
+#ebcb8b
+#bf616a
+#2aa889
+#edb443
+#c23127
+
+#2F343F
+#0a0f14

@@ -9,12 +9,12 @@
 
 *.color0:             #1F232B
 *.color7:             #232629
-*.color14:             #2a2e32
-*.color21:             #39404F
-*.color28:             #39404F
-*.color35:             #363C50
-*.color42:             #31363b
-!*.color49:
+*.color14:            #2a2e32
+*.color21:            #39404F
+*.color28:            #39404F
+*.color35:            #363C50
+*.color42:            #31363b
+*.color49:            #2F343F
 !*.color56:
 !*.color63:
 !*.color70:
@@ -23,12 +23,12 @@
 ￼
 *.color1:             #b3202f
 *.color8:             #732931
-*.color15:             #BD7C75
-*.color22:             #BE5046
-*.color29:             #FE9EAD
-*.color36:             #DA4453
-*.color43:             #A3684B
-*.color50:             #AE4544
+*.color15:            #BD7C75
+*.color22:            #BE5046
+*.color29:            #FE9EAD
+*.color36:            #DA4453
+*.color43:            #A3684B
+*.color50:            #AE4544
 !*.color57:
 !*.color64:
 !*.color71:
@@ -37,8 +37,8 @@
 ! Greens Colors -----
 *.color2:             #A0B475
 *.color9:             #849561
-*.color16:             #98C379
-*.color23:             #27AE60
+*.color16:            #98C379
+*.color23:            #27AE60
 !*.color30:
 !*.color37:
 !*.color44:
@@ -50,13 +50,13 @@
 
 ! Blues Colors -----
 *.color3:             #A1D9FF
-*.color10:             #79B0C0
-*.color17:             #82C1B9
-*.color24:             #3C909B
-*.color31:             #3E999F
-*.color38:             #56B6C2
-*.color45:             #3DAEE9
-!*.color52:
+*.color10:            #79B0C0
+*.color17:            #82C1B9
+*.color24:            #3C909B
+*.color31:            #3E999F
+*.color38:            #56B6C2
+*.color45:            #3DAEE9
+*.color52:            #99d1ce
 !*.color59:
 !*.color66:
 !*.color73:
@@ -65,12 +65,12 @@
 
 ! Yellows Colors -----
 *.color4:             #fff1c1 
-*.color11:             #F9C991
-*.color18:             #E1AA5D
-*.color25:             #E5C07B
-*.color32:             #FDBC4B
-*.color39:             #D19A66
-*.color46:             #F67400
+*.color11:            #F9C991
+*.color18:            #E1AA5D
+*.color25:            #E5C07B
+*.color32:            #FDBC4B
+*.color39:            #D19A66
+*.color46:            #F67400
 !*.color53:
 !*.color60:
 !*.color67:
@@ -80,10 +80,10 @@
 
 ! Magenta Colors
 *.color5:             #655461
-*.color12:             #C678DD
-*.color19:             #BC8BAC
-*.color26:             #9A52AF
-*.color33:             #60459F
+*.color12:            #C678DD
+*.color19:            #BC8BAC
+*.color26:            #9A52AF
+*.color33:            #60459F
 !*.color40:
 !*.color47:
 !*.color54:
@@ -109,48 +109,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-client.unfocused        #606060 #303030     #707070
-client.focused_inactive #aaaaaa #000000     #aaaaaa
-client.focused          #e1aa5d      #000000
-client.urgent           #a0cf5d #000000     #eeeeee
-light: &light
-    primary:
-      background: '#ffffff'
-      foreground: '#4d4d4c'
-    normal:
-      black: '#ffffff'
-      red: '#c82829'
-      green: '#718c00'
-      yellow: '#eab700'
-      blue: '#4271ae'
-      magenta: '#8959a8'
-      white: '#1d1f21'
-
-
-
-*color12: 
-!! magenta
-*color5: 
-*color13: #fff1c1
-!! cyan
-*color6: 
-*color14: #849561
-!! white
-*color7: 
-*color15: #d5eeff
 
 
 
