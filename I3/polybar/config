@@ -66,8 +66,8 @@ font-4 = "FontAwesome:size=8;"
 
 
 modules-left = 
-modules-right =  pulseaudio date 
 modules-center = i3
+modules-right =  pulseaudio date 
 # weather 
 
 
@@ -117,10 +117,10 @@ padding = 0
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = "Iosevka:pixelsize=10;2"
+font-0 = "Iosevka:pixelsize=10;"
 font-1 = Jet Brains Mono:pixelsize=10;
-font-2 = "Material Icons:style=Regular:pixelsize=12;"
-font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=8;"
+font-2 = "Material Icons:style=Regular:pixelsize=10;"
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=6;"
 font-4 = "FontAwesome:size=8;"
 #dpi-x = 96
 #dpi-y = 96
@@ -217,7 +217,7 @@ label-focused =  %icon%
 
 label-focused-foreground = #ffffff
 label-focused-background =  #3f3f3f
-label-focused-underline = #fba922
+label-focused-underline = ${colors.blue}
 label-focused-padding = 4
 
 ; --- Workspace Unfocused
@@ -287,7 +287,7 @@ interval = 10
 
 type = internal/network
 
-interface = eth1
+interface = enp10s0
 
 ; Accumulate values for all interfaces
 accumulate-stats = true
@@ -380,35 +380,41 @@ ramp-volume-2 = 
 [module/date]
 type = internal/date
 
-; Seconds to sleep between updates
-; Default: 1.0
 interval = 1.0
 
 ; See "https://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %d-%m-%y
+
+;date = %d-%m-%Y%
+date = %Y-%m-%d%
 
 ; Optional time format
-time = %H:%M%P
+time = %H:%M
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
+
 date-alt = %A, %d %B %Y
-time-alt = %H:%M:%S
 
 ; Available tags:
 ;   <label> (default)
+
 format =  <label>
-format-background = ${xrdb:background}
-format-foreground = ${xrdb:foreground}
+
+
+;format-background = ${xrdb:background}
+;format-foreground = ${xrdb:foreground}
+format-background = #55ff3399
+format-foreground = #fff
 
 ; Available tokens:
 ;   %date%
 ;   %time%
 ; Default: %date%
+
 label = %date% %time%
 label-font = 3
-label-foreground = #9A32DB
+label-foreground = #aba16d
 
 
 [module/cpu]
