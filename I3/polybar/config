@@ -338,9 +338,11 @@ interval = 10
 [module/pulseaudio]
 type = internal/pulseaudio
 
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
 ; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
 ; Default: true
-;use-ui-max = true
+;use-ui-max = false
 
 interval = 5
 
@@ -351,17 +353,20 @@ click-right = pavucontrol
 ;   <label-volume> (default)
 ;   <ramp-volume>
 ;   <bar-volume>
+
 format-volume = <ramp-volume> <label-volume>
 
 ; Available tags:
 ;   <label-muted> (default)
 ;   <ramp-volume>
 ;   <bar-volume>
+
 ;format-muted = <label-muted>
 
 ; Available tokens:
 ;   %percentage% (default)
 ;   %decibels%
+
 ;label-volume = %percentage%%
 
 ; Available tokens:
