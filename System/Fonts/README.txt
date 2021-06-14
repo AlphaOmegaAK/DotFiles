@@ -1,5 +1,8 @@
 Fonts for all users located :
 	/usr/share/fonts/
+	
+OTF Fonts go to:
+	/usr/share/fonts/truetype/
 
 Fonts for particular user:
 	~/.local/share/fonts/

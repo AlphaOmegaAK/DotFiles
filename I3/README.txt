@@ -4,7 +4,7 @@
 # I3Exit
   ~/.config/i3/i3exit
 
-# I3 Statis Config Location
+# I3 Status Config Location
 	~/.config/i3status/config
 
 # I3 Gaps (Radius)
@@ -19,6 +19,9 @@ Default polybar config : /usr/share/doc/polybar/config
 
 # Polybar Launch Script
   ~/.config/polybar/launch.sh
+
+# Polybar Scripts Directory
+  ~/.config/polybar/scripts
 
 Inside i3's config
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

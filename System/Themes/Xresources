@@ -1,8 +1,13 @@
 ! Special
 
-*.foreground:         #CCD0D9
-*.background:         #1C2024
+*.foreground:         #b0b5bf
+*.background:         #1a2026
+! #161a1f
 *.cursorColor:        #9CA391
+*.primary:            #79B0C0
+*.seconday:           #445994
+*.alert:              #B33634
+
 
 
 ! Dark Colors -----

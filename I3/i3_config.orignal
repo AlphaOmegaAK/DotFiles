@@ -1,0 +1,457 @@
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+#font pango:monospace 10
+
+#font pango:Hack, FontAwesome 8
+font pango:monospace 10, FontAwesome 8
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# Sound Management
+exec --no-startup-id gnome-sound-applet
+
+# GTK Theme
+exec --no-startup-id gnome-settings-daemon
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# =============================================================================
+# ================================= AUDIO ================================
+# =============================================================================
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous 
+
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+#bindsym $mod+Shift+q kill
+bindsym $mod+q kill
+
+set $dmenu_launcher dmenu_run -i -nb '#393939' -nf '#48B685' -sb '#dfefe2' -sf '#393939'
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec $dmenu_launcher
+#bindsym $mod+d exec rofi -show run  -lines 3 -eh -font "Menlo 11" -bw 3 -display-run "> " 
+#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 30 -padding 0 -opacity "55" -font "Fira Mono 10"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 30 -padding 0 -opacity "55" -font "Consolas 10"
+
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+#set $ws1 "1⟫ 〄Web"
+#set $ws2 "2⟫  Dev"
+#set $ws3 "3⟫  Files"
+#set $ws4 "4⟫  Misc"
+#set $ws5 "5⟫  Mail"
+#set $ws6 "6⟫ Social"
+#set $ws7 "7⟫ ₪ Design"
+
+set $ws1 "1⟫ 〄Web"
+set $ws2 "2⟫ ₪ Design"
+set $ws3 "3⟫  Misc"
+
+set $ws6 "6⟫  Dev"
+set $ws7 "7⟫  Files"
+set $ws8 "8⟫ Social"
+set $ws5 "9⟫  Mail"
+
+
+#set $ws8 "8" ✉
+#set $ws9 "9"
+#set $ws10 "10"
+#set $ws1 "1 Web"
+#set $ws2 "2 Dev"
+#set $ws3 "3 Files"
+#set $ws4 "4 Misc"
+#set $ws5 "5 Mail"
+#set $ws6 "6 Social"
+# ➊ ➋ ➌ ➍ ➎ ➏ ➐     ↈ ⤐
+#     
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+#bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+#bindsym $mod+Shift+7 move container to workspace number $ws7
+#bindsym $mod+Shift+8 move container to workspace number $ws8
+#bindsym $mod+Shift+9 move container to workspace number $ws9
+#bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# =============================================================================
+# ================================= WorkSpaces ================================
+# =============================================================================
+
+# Auto assigning workspaces to specific monitors
+set $m1 DP-1 
+set $m2 HDMI-0
+#workspace $ws1 output $m1
+#workspace $ws3 output $m1
+#workspace $ws4 output $m1 
+#workspace $ws7 output $m1
+
+#workspace $ws2 output $m2
+#workspace $ws5 output $m2
+#workspace $ws6 output $m2
+
+workspace $ws1 output $m1
+workspace $ws2 output $m1
+workspace $ws3 output $m1
+#workspace $ws4 output $m1 
+
+
+#workspace $ws5 output $m2
+workspace $ws6 output $m2
+workspace $ws7 output $m2
+workspace $ws8 output $m2
+workspace $ws9 output $m2
+# ========================== Workspace Assignments ============================
+# Get Class, Instance values : Open App, Term: #xprop | grep WM_CLASS, click app, term output
+# First is Instance, 2nd is class : WM_CLASS(String) = "Navigator", "firefox"
+
+# ws1 = Web
+# ws2 = Dev
+# ws3 = Files
+# ws4 = Misc
+# ws5 = Mail
+# ws6 = Social
+# ws7 = Design
+
+# 1. Web
+#assign [class="Firefox" instance="Navigator"] $ws1
+##assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
+#assign [class="Google-chrome" instance="google-chrome"] $ws1
+
+## 2. Dev
+#assign [class="Alacritty" instance="Alacritty"] $ws2
+#assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] $ws2
+#assign [class="Code" instance="code"] $ws2
+
+## 3. Files
+#assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws3
+
+## 4. Misc   
+#assign [class="libreoffice-startcenter" instance="libreoffice"] $ws4
+
+## 5. Mail
+#assign [class="Mailspring" instance="mailspring"] $ws5
+
+## 6. Social
+#for_window [class="Spotify"] move to workspace $ws6
+#assign [class="discord" instance="discord"] $ws6
+
+## 7. Design
+#assign [class="figma-linux" instance="figma-linux"] $ws7
+
+
+# 1. Web
+assign [class="Firefox" instance="Navigator"] $ws1
+#assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
+assign [class="Google-chrome" instance="google-chrome"] $ws1
+
+# 2. Design
+assign [class="figma-linux" instance="figma-linux"] $ws2
+
+# 3. Misc   
+assign [class="libreoffice-startcenter" instance="libreoffice"] $ws3
+
+# 6. Dev
+assign [class="Alacritty" instance="Alacritty"] $ws6
+assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] $ws6
+assign [class="Code" instance="code"] $ws6
+
+# 7. Files
+assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws7
+
+# 8. Social
+for_window [class="Spotify"] move to workspace $ws8
+assign [class="discord" instance="discord"] $ws8
+
+# 9. Mail
+assign [class="Mailspring" instance="mailspring"] $ws9
+
+
+bindsym F1 exec alacritty
+bindsym F2 exec google-chrome
+bindsym Shift+F2 exec firefox
+bindsym F3 exec nautilus ~/
+bindsym F4 exec mailspring
+bindsym F5 exec nautilus ~/Downloads
+
+# --- Jump back to previous workspace with same key used to jump to new workspace
+workspace_auto_back_and_forth yes
+
+
+#xrandr --output HDMI-1 --auto --right-of DP-1
+focus_follows_mouse yes
+focus_on_window_activation smart
+
+
+for_window [window_role="pop-up"] floating enable
+
+# ----- GAPS -----
+for_window [class=".*"] border pixel 2
+
+#gaps inner all set 10
+gaps inner 10
+gaps outer 2
+border_radius 5
+# Only enable gaps on a workspace when there is at least one container
+#smart_gaps on
+
+
+#gaps inner all set 5px
+#gaps out
+# =============================================================================
+
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+# Print screen focused window
+set $DATE='%m%d%Y'
+bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/shots/'
+
+# Print screen entire view
+bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/shots/'
+
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#:::::::::::::::::::::::::::::: Customization ::::::::::::::::::::::::::::::::: 
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+#  =========================== Start-ups ======================================
+exec xrandr --output HDMI-0 --auto --right-of DP-1
+#exec --no-startup-id feh --bg-fill ~/Pictures/dark_fluid.jpg
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/dark_smoke.png
+exec picom --experimental-backends &
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
+exec --no-startup-id gnome-settings-daemon
+
+# Feh Presets
+# feh --randomize --bg-fill ~/Pictures/Wallpapers/*
+
+
+
+
+# =============================================================================
+# =============================== Key Bindings ================================
+# =============================================================================
+
+# Cycle back & forth last workspace 
+bindsym Mod1+Tab     exec --no-startup-id i3-msg workspace back_and_forth   
+bindsym --no-startup-id $mod+Control+l exec i3lock -i ~/Pictures/Wallpapers/LockScreenWP.png -c 1c1e1f
+
+set $mode_power power
+bindsym Mod1+Control+l mode "$mode_power"
+mode "$mode_power" {
+    bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock 
+    bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout
+    bindsym s mode "default", exec --no-startup-id $HOME/.config/i3/i3exit suspend
+    bindsym h mode "default", exec --no-startup-id $HOME/.config/i3/i3exit hibernate
+    bindsym r mode "default", exec --no-startup-id $HOME/.config/i3/i3exit reboot
+    bindsym p mode "default", exec --no-startup-id $HOME/.config/i3/i3exit shutdown
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+
+# =============================================================================
+# ================================= Theme =====================================
+# =============================================================================
+# ----- Wallpaper -----
+# get color from XResource config - variable_name XResource fallback
+
+#set_from_resource $white2 color15 #ffffff
+
+
+
+
+set $bgcolor #181A1B
+#set $fgcolor
+set $txtcolor #A99888
+#set $txtcolor #8DDDD0
+#set $txtcolor #BDAE93
+set $client_txt_color #BDAE93
+set $client_brdr_clr #458588
+set $client_child_brdr_clr   #458588
+
+
+#set $client_txt_color 
+
+##A89780 #D5c4a1 #35a0a6 #48B685
+
+#set $urgent
+
+# colour of               border,  backgrd, text,              indictr,  child_brdr
+client.focused            $client_brdr_clr  #2f343f  $client_txt_color  $client_brdr_clr   $client_child_brdr_clr
+client.focused_inactive   #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
+#client.unfocused         #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
+#client.urgent            #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
+#client.placeholder       #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
+#client.background        #2f343f
+
+## ##272B34 #0497d8 #8DDDD0 #293436 #181A1B
+
+
+# =============================================================================
+# =============================== Status Bar ==============================
+# =============================================================================
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+bar {
+    output HDMI-0
+    i3bar_command i3bar
+    font pango:Hack, FontAwesome 12
+
+    colors {
+        background $bgcolor
+        statusline $txtcolor
+
+    }
+}
+
+bar {
+    output DP-1
+    tray_output DP-1
+    font pango:Hack,FontAwesome 10
+    separator_symbol " ⥍ "
+#⋰ ⥋ ⥦ ♦︎
+
+    colors {
+        background $bgcolor
+        statusline $txtcolor
+
+    }
+    #status_command i3blocks
+    status_command i3status
+    font pango:Hack 16
+
+}   
+

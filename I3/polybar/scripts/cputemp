@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo "$(sensors | grep temp1 | awk -F ' ' '{ print $2 }')"
