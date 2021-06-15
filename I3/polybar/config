@@ -68,7 +68,7 @@ radius = 0
 
 # ---
 background = ${colors.bg4}
-foreground = ${colors.fg2}
+foreground = ${colors.fg1}
 
 ;background = ${colors.background}
 ;foreground = ${colors.foreground}
@@ -84,19 +84,19 @@ module-margin-right = 2
 
 font-0 = Jet Brains Mono:pixelsize=12;
 font-1 = "Material Icons:style=Regular:pixelsize=12;"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;"
-font-3 = "FontAwesome:size=8;"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;"
+font-3 = "FontAwesome:size=10;"
 #dpi-x = 96
 #dpi-y = 96
 
 
-modules-left = 
+modules-left = date  
 modules-center = i3
-modules-right =  date  pulseaudio
+modules-right =  pulseaudio
 # weather 
 
 
-tray-position = right
+tray-position = none
 tray-padding = 1
 tray-background = ${colors.tray-backround:#363C50}
 tray-offset-x = 0
@@ -148,19 +148,19 @@ module-margin-left = 0
 module-margin-right = 1
 
 font-0 = Jet Brains Mono:pixelsize=10;
-font-1 = "Material Icons:style=Regular:pixelsize=10;"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=6;"
-font-3 = "FontAwesome:size=8;"
+font-1 = "Material Icons:style=Regular:pixelsize=12;"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;"
+font-3 = "FontAwesome:size=10;"
 #dpi-x = 96
 #dpi-y = 96
 
 
-modules-left = cpu network
+modules-left = cpu cputemp gputemp 
 modules-center = i3
-modules-right =  memory cputemp gputemp 
+modules-right =  memory network
 
 
-tray-position = right
+tray-position = none
 tray-padding = 1
 tray-background = ${colors.tray-backround:363C50}
 tray-offset-x = 0
@@ -202,9 +202,9 @@ ws-icon-1 = 2; Design
 ws-icon-2 = 3; Misc
 
 # blank
-ws-icon-3 = 4; 
+ws-icon-3 = 4;
 
-ws-icon-4 = 5;
+ws-icon-4 = 5; 
 
 # Dev 
 ws-icon-5 = 6; Dev
@@ -222,7 +222,6 @@ ws-icon-8 = 9; Mail
 # Default Icon
 ws-icon-default = 
 ; */
-
 ; -------------------------------------------------------------
 
 ; Available tokens:
@@ -244,10 +243,8 @@ label-mode-background = ${colors.bg4}
 label-focused =  %icon%
 
 label-focused-foreground = ${colors.bg4}
-;label-focused-foreground = ${colors:alert}
-
-
 label-focused-background = ${colors.focus}
+
 label-focused-underline = ${colors.accent3}
 label-focused-padding = 4
 
@@ -272,8 +269,8 @@ label-unfocused-padding = 4
 ; --- Workspace Visibe
 
 label-visible = %icon%
-;label-visible-underline = #555555
-label-visible-underline = ${colors.accent}
+label-visible-underline = #555555
+;label-visible-underline = ${colors.accent1}
 label-visible-padding = 4
 
 ; --- Workspace Urgent 
@@ -286,12 +283,12 @@ label-visible-padding = 4
 
 
 label-urgent = %icon%
-label-urgent-foreground = #000000
+label-urgent-foreground = ${colors.fg2}
 label-urgent-background = ${colors:alert:#bd2c40}
 label-urgent-padding = 4
 
 ; Separator in between workspaces
-label-separator = ♦︎
+label-separator = |
 label-separator-padding = 2
 label-separator-foreground = #ffb52a
 
@@ -301,9 +298,10 @@ type = internal/memory
 
 format-foreground = 
 format-padding = 5
-label = %mb_used%/%mb_total%
+label =  RAM: %mb_used%/%mb_total%
 
 interval = 10
+
 
 
 [module/network]
@@ -326,15 +324,45 @@ accumulate-stats = true
 
 interval = 3.0
 
-label-connected =  %downspeed%  %upspeed%
+label-connected =   %downspeed%  %upspeed%
 
-format-connected-padding = 5
+format-connected-padding = 2
 format-connected-foreground = ${xrdb:fg3}
 format-connected-background = ${xrdb:bg4}
 
-label-disconnected = Not Connected
+label-disconnected =  Not Connected
 
 
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+format = <label>
+format-prefix = %{T5}CPU:%{T-}
+format-prefix-background = ${xrdb:bg1}
+format-prefix-foreground = ${xrdb:bg4}
+format-prefix-padding = 1
+label = %{T1}%percentage:2%%%{T-}
+label-background = ${xrdb:bg4}
+label-foreground = ${xrdb:fg1}
+label-padding = 0
+
+
+
+[module/cputemp]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/cputemp
+
+format = <label>
+format-foreground = ${xrdb:fb3}
+format-background = ${xrdb:bg4}
+format-padding = 1
+label = %output%
+
+tail = true
+
+interval = 10
 
 
 
@@ -342,26 +370,11 @@ label-disconnected = Not Connected
 type = custom/script
 exec = $HOME/.config/polybar/scripts/gputemp
 
-format = GPU: <label>
+format =  GPU: <label>
 format-foreground = ${xrdb:fg3}
 format-background = ${xrdb:bg4}
-format-padding = 5
+format-padding = 1
 label = %output%
-
-interval = 10
-
-
-[module/cputemp]
-type = custom/script
-exec = $HOME/.config/polybar/scripts/cputemp
-
-format = CPU: <label>
-format-foreground = ${xrdb:fb3}
-format-background = ${xrdb:bg4}
-format-padding = 5
-label = %output%
-
-tail = true
 
 interval = 10
 
@@ -424,16 +437,17 @@ interval = 1.0
 
 date = %m-%d-%y%
 
-time = %H:%M
+time = %H:%M %P
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
 
 date-alt = %A, %d %B %Y
 
-format =  <label>
+format =  <label>
 format-foreground = ${xrdb:fg1}
 format-background = ${xrdb:bg4}
+format-padding = 2
 
 ; Available tokens:
 ;   %date%
@@ -445,16 +459,3 @@ label-font = 1
 label-foreground = #aba16d
 
 
-[module/cpu]
-type = internal/cpu
-interval = 1
-
-format = <label>
-format-prefix = %{T5}%{T-}
-format-prefix-background = ${xrdb:bg1}
-format-prefix-foreground = ${xrdb:bg4}
-format-prefix-padding = 1
-label = %{T1}%percentage:2%%%{T-}
-label-background = ${xrdb:bg4}
-label-foreground = ${xrdb:fg1}
-label-padding = 1
