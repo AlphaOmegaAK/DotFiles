@@ -27,4 +27,6 @@ Inside i3's config
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
+# Polybar Scripts :
+https://github.com/polybar/polybar-scripts
 
