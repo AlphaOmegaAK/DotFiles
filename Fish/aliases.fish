@@ -7,6 +7,7 @@ alias so="source "
 
 alias todo="nvim ~/Documents/todo.md"
 alias joplin="joplin-james-carroll.joplin"
+alias intj="intellij-idea-community"
 
 alias i3conf="nvim ~/.config/i3/config"
 alias vconf="nvim ~/.config/nvim/init.vim"
@@ -18,6 +19,7 @@ alias iscript="cd ~/Code/Systetm/Scripts/"
 alias nvdir="cd ~/Code/System/Nvim-Config"
 
 alias g="git "
+alias gc="git clone"
 alias gs="git status -sb"
 alias gaa="git add -A"
 alias gcmsg="git commit -m "
