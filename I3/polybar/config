@@ -322,7 +322,7 @@ accumulate-stats = true
 
 interval = 3.0
 
-label-connected =   %downspeed%  %upspeed%
+label-connected = : %downspeed%  %upspeed%
 
 format-connected-padding = 2
 format-connected-foreground = ${colors.fg1}
