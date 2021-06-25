@@ -16,6 +16,6 @@
   remote = cyan
 [core]
 	editor = vim
-	excludesfile = /home/alpha/.global_git_ignore
+	excludesfile = ~/.gitignore
 [alias]
   ll = "log --format=\"%h%C(#69aadb)%d%C(reset) %s\""

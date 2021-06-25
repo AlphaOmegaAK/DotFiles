@@ -18,7 +18,7 @@ ln -s $(pwd)/rofi ~/.config/rofi ;
 
 ln -s $(pwd)/tmux.conf ~/.tmux.conf ;	
 ln -s $(pwd)/gitmux.conf ~/.gitmux.conf ;	
-ln -s $(pwd)global_git_ignore ~/.global_git_ignore ;
+ln -s $(pwd)/global_git_ignore ~/.gitignore ;
 git config --global core.excludesfile ~/.global_git_ignore ;
 ln -s $(pwd)gitconfig ~/.gitconfig ;
 

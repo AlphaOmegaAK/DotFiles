@@ -318,7 +318,7 @@ bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/shots/'
 
 #  =========================== Start-ups ======================================
 exec xrandr --output HDMI-0 --auto --right-of DP-1 &
-exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/hush_skill.png &
+exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Wallpapers/dark_skull.jpg &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 exec picom --experimental-backends &
 exec --no-startup-id gnome-settings-daemon &
