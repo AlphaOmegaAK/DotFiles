@@ -27,7 +27,7 @@ WELCOME
 #set chosen_msg $msgs[(math $chosen_msg"+1")]
 #printf (set_color F20)"%s\n" $chosen_msg
 
-fortune
+#fortune
 end
 
 

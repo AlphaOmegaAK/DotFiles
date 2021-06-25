@@ -1,13 +1,20 @@
-# Defined in /tmp/.psub.OUVfHGx3eP @ line 1
-function fish_prompt
-    switch "$fish_key_bindings"
-        case fish_hybrid_key_bindings fish_vi_key_bindings
-            set keymap "$fish_bind_mode"
-        case '*'
-            set keymap insert
+# Defined interactively
+function fish_prompt --description 'Informative prompt'
+    #Save the return status of the previous command
+    set -l last_pipestatus $pipestatus
+    set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
+
+    if functions -q fish_is_root_user; and fish_is_root_user
+        printf '%s@%s %s%s%s# ' $USER (prompt_hostname) (set -q fish_color_cwd_root
+                                                         and set_color $fish_color_cwd_root
+                                                         or set_color $fish_color_cwd) \
+            (prompt_pwd) (set_color normal)
+    else
+        set -l pipestatus_string (__fish_print_pipestatus "[" "] " "|" (set_color $fish_color_status) \
+                                  (set_color --bold $fish_color_status) $last_pipestatus)
+
+        printf '[%s] %s%s@%s %s%s %s%s%s \n> ' (date "+%H:%M:%S") (set_color brblue) \
+            $USER (prompt_hostname) (set_color $fish_color_cwd) $PWD $pipestatus_string \
+            (set_color normal)
     end
-    set -l exit_code $status
-    # Account for changes in variable name between v2.7 and v3.0
-    set -l starship_duration "$CMD_DURATION$cmd_duration"
-    "/usr/local/bin/starship" prompt --status=$exit_code --keymap=$keymap --cmd-duration=$starship_duration --jobs=(count (jobs -p))
 end
