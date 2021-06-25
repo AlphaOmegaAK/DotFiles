@@ -204,31 +204,6 @@ workspace $ws9 output $m2
 # "8⟫ Social"
 # "9⟫  Mail"
 
-# 1. Web
-#assign [class="Firefox" instance="Navigator"] $ws1
-#assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
-#assign [class="Google-chrome" instance="google-chrome"] $ws1
-
-### 2. Dev
-#assign [class="Alacritty" instance="Alacritty"] $ws2
-#assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] $ws2
-#assign [class="Code" instance="code"] $ws2
-
-### 3. Files
-#assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws3
-
-### 4. Misc   
-#assign [class="libreoffice-startcenter" instance="libreoffice"] $ws4
-
-### 5. Mail
-#assign [class="Mailspring" instance="mailspring"] $ws5
-
-### 6. Social
-#for_window [class="Spotify"] move to workspace $ws6
-#assign [class="discord" instance="discord"] $ws6
-
-## 7. Design
-#assign [class="figma-linux" instance="figma-linux"] $ws7
 
 
 # 1. Web
@@ -282,7 +257,7 @@ for_window [class=".*"] border pixel 2
 #gaps inner all set 10
 gaps inner 10
 gaps outer 2
-border_radius 5
+#border_radius 5
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
 
@@ -342,11 +317,11 @@ bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/shots/'
 
 
 #  =========================== Start-ups ======================================
-exec xrandr --output HDMI-0 --auto --right-of DP-1
-exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/dark_smoke.png
+exec xrandr --output HDMI-0 --auto --right-of DP-1 &
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/hush_skill.png &
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 exec picom --experimental-backends &
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
-exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id gnome-settings-daemon &
 
 # Feh Presets
 # feh --randomize --bg-fill ~/Pictures/Wallpapers/*

@@ -189,32 +189,32 @@ enable-scroll = true
 # -----------------
 # ----- Icons -----
 # -----------------
-
+#
 # Web
-ws-icon-0 = 1; Web
+ws-icon-0 = 1;Web
 
 # Design
-ws-icon-1 = 2; Design
+ws-icon-1 = 2; Design
 
 # Misc
-ws-icon-2 = 3; Misc
+ws-icon-2 = 3; Misc
 
 # blank
-ws-icon-3 = 4;
+ws-icon-3 = 4;
 
-ws-icon-4 = 5; 
+ws-icon-4 = 5; 
 
 # Dev 
-ws-icon-5 = 6; Dev
+ws-icon-5 = 6; Dev
 
-# Files 
-ws-icon-6 = 7; Files
+# Files 
+ws-icon-6 = 7; Files
 
-# Social
-ws-icon-7 = 8;Social
+# Social
+ws-icon-7 = 8;Social
 
-# Mail
-ws-icon-8 = 9; Mail
+# Mail
+ws-icon-8 = 9; Mail
 
 
 # Default Icon
@@ -485,8 +485,8 @@ format-spacing = 1
 format-foreground = ${colors.fg1}
 format-background = ${colors.bg1}
 format-padding = 2
-
-label-open = 
+#
+label-open = 
 label-close = 
 label-separator = |
 
