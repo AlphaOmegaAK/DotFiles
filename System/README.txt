@@ -3,6 +3,12 @@ xinitrc -> ~/.xinitrc
 Xresources -> ~/.Xresources
 
 
+--- Zathura
+zathurarc -> ~/.config/zathura/zathurarc
+Set as default 
+xdg-mime default org.pwmt.zathura.desktop application/pdf
+
+
 --- Fonts
 Fonts for all users located :
 	/usr/share/fonts/

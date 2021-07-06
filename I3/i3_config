@@ -224,6 +224,7 @@ assign [class="Code" instance="code"] $ws6
 
 # 7. Files
 assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws7
+assign [class="Thunar" instance="thunar"] $ws7
 
 # 8. Social
 for_window [class="Spotify"] move to workspace $ws8
@@ -316,15 +317,6 @@ bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/shots/'
 
 
 
-#  =========================== Start-ups ======================================
-exec xrandr --output HDMI-0 --auto --right-of DP-1 &
-exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/dark_skull.jpg &
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
-exec picom --config ~/.config/picom.conf -b --experimental-backends &
-# exec --no-startup-id gnome-settings-daemon &
-
-# Feh Presets
-# feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
 
 
@@ -356,74 +348,32 @@ mode "$mode_power" {
 # =============================================================================
 # ================================= Theme =====================================
 # =============================================================================
-# ----- Wallpaper -----
-# get color from XResource config - variable_name XResource fallback
-
-#set_from_resource $white2 color15 #ffffff
-
-
-
-
 set $bgcolor #171A1C
-#181A1B
-#set $fgcolor
 set $txtcolor #A99888
-#set $txtcolor #8DDDD0
-#set $txtcolor #BDAE93
 set $client_txt_color #BDAE93
-set $client_brdr_clr #458588
-set $client_child_brdr_clr #458588
-
-
-#set $client_txt_color 
+set $client_brdr_clr #b17286
+set $client_child_brdr_clr #828374
+#set $client_child_brdr_clr #458588
 
 ##A89780 #D5C4A1 #35A0A6 #48B685
 
-#set $urgent
 
-# colour of               border,  backgrd, text,              indictr,  child_brdr
-client.focused            $client_brdr_clr  #2f343f  $client_txt_color  $client_brdr_clr   $client_child_brdr_clr
-client.focused_inactive   #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
-#client.unfocused         #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
-#client.urgent            #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
-#client.placeholder       #2f343f  #2f343f  $client_txt_color  #2f343f   #2f343f
+# colour of               border,           backgrd,  text,              indictr,           child_brdr
+client.focused            $client_brdr_clr  #2f343f   $client_txt_color  $client_brdr_clr   $client_child_brdr_clr
+client.focused_inactive   #2f343f           #2f343f   $client_txt_color  #2f343f            #2f343f
+#client.unfocused         #2f343f           #2f343f   $client_txt_color  #2f343f            #2f343f
+#client.urgent            #2f343f           #2f343f   $client_txt_color  #2f343f            #2f343f
+#client.placeholder       #2f343f           #2f343f   $client_txt_color  #2f343f            #2f343f
 #client.background        #2f343f
 
 ## ##272B34 #0497d8 #8DDDD0 #293436 #181A1B
 
 
-# =============================================================================
-# =============================== Status Bar ==============================
-# =============================================================================
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 
-#bar {
-    #output HDMI-0
-    #i3bar_command i3bar
-    #font pango:Hack, FontAwesome 12
+#  =========================== Start-ups ======================================
+exec xrandr --output HDMI-0 --auto --right-of DP-1 &
+exec picom --config ~/.config/picom.conf -b --experimental-backends &
 
-    #colors {
-        #background $bgcolor
-        #statusline $txtcolor
-
-    #}
-#}
-
-#bar {
-    #output DP-1
-    #tray_output DP-1
-    #font pango:Hack,FontAwesome 10
-    #separator_symbol " ⥍ "
-
-    #colors {
-        #background $bgcolor
-        #statusline $txtcolor
-
-    #}
-    ##status_command i3blocks
-    #status_command i3status
-    #font pango:Hack 16
-
-#}   
+exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/dark-carbon-fiber.jpg
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 
