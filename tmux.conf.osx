@@ -1,0 +1,7 @@
+# OSX Clipboard
+#   Place ~/.tmux.conf.osx or where .tmux.conf is located
+
+set-option -g default-command "reattach-to-user-namespace -l fish"
+
+# Add to tmux.conf
+# if-shell "uname -s | grep -q Darwin" "source ~/.tmux.conf.osx
