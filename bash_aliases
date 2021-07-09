@@ -14,7 +14,7 @@ alias undopush="git push -f origin HEAD^:master"
 # File Size
 alias fs="stat -f \"%z bytes\""
 #Disk Space
-alias diskspace_report="df -P -kHl"
+alias disk_report="df -P -kHl"
 
 # Update + Upgrade
 
@@ -35,6 +35,7 @@ alias cdcc="cd ~/Code-Directory/Code_Challenges"
 
 alias vimconf="nvim ~/.vim/vimrc"
 alias zshconf="nvim ~/.zshrc"
+alias fishconf="nvim ~/.config/fish/config.fish"
 alias alacconf="nvim ~/.config/alacritty/alacritty.yml"
 alias vconf="v ~/.config/nvim"
 

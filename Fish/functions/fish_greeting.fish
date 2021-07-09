@@ -1,3 +1,7 @@
+# #
+# ~/.config/fish/functions/fish_greeting.fish
+# #
+
 function fish_greeting
     printf (set_color F70)"
 WELCOME

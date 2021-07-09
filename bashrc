@@ -1,3 +1,7 @@
+# # 
+# .bashrc
+# # 
+
 glog() {
 	setterm -linewrap off 2> /dev/null
 

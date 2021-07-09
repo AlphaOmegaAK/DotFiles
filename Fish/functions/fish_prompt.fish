@@ -1,3 +1,8 @@
+
+# #
+# ~/.config/fish/functions/fish_prompt.fish
+# #
+
 # Defined interactively
 function fish_prompt --description 'Informative prompt'
     #Save the return status of the previous command

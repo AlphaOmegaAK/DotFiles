@@ -1,3 +1,7 @@
+# #
+# ~/.config/fish/aliases.fish
+# #
+
 alias v="nvim"
 alias cl="clear"
 alias chmox="chmod +x"

@@ -1,3 +1,7 @@
+# #
+# ~/.global_git_ignore
+# #
+
 .env
 .vscode/
 .idea

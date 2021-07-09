@@ -1,4 +1,6 @@
-#starship init fish | source
+# #
+# ~/.config/fish/config.fish
+# #
 
 # Colored Man Pages
 set -xU LESS_TERMCAP_md (printf "\e[01;31m")

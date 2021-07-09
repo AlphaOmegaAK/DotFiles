@@ -1,3 +1,7 @@
+# #
+# ~/.config/fish/functions/gitlog.fish
+# #
+
 function glog
 	setterm -linewrap off 2> /dev/null
 

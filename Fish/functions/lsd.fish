@@ -1,3 +1,7 @@
+# #
+# ~/.config/fish/functions/lsd.fish
+# #
+
 function lsd --description "ls or cat"
   if test -d $argv
     for entry in (exa -1 $argv)

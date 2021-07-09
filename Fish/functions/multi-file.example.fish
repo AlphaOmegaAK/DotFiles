@@ -1,3 +1,7 @@
+# #
+# ~/.config/fish/functions/multi_file.example.fish
+# #
+
 function nuke
   switch $argv
     case '*'jpg '*'jpeg '*'png '*'webp '*'svg '*'gif
