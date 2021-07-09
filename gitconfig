@@ -1,6 +1,7 @@
 [user]
 	name = alpha0megaak
 	email = arturxkaminski@gmail.com
+
 [color]
   diff = auto
   status = auto
@@ -8,14 +9,23 @@
   interactive = auto
   ui = true
   pager = true
+
 [color "status"]
   added = green
   changed = yellow
   untracked = magenta
+
 [color "branch"]
   remote = cyan
+
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+
 [alias]
   ll = "log --format=\"%h%C(#69aadb)%d%C(reset) %s\""
+  d = diff
+  st = status
+  hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+
+
