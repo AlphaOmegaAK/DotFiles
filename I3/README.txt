@@ -30,3 +30,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Polybar Scripts :
 https://github.com/polybar/polybar-scripts
 
+
+# Wallpaper Finder with specific colors
+https://labs.tineye.com/multicolr/#colors=222D33,382e71;weights=97,3;tags=wallpaper;
