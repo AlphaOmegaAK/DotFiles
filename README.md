@@ -35,10 +35,11 @@ taskrc              >    ~/.taskrc
 ```
 
 ```
-===== Themes/* =====
+===== System/* =====
 <FILE>                    <LOCATION>
 xinitrc       >          ~/.xinitrc
 Xresources    >          ~/.Xresources
+zathura       >          ~/.config/zathura
 
 ```
 
