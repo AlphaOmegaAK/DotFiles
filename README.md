@@ -84,9 +84,32 @@ Nvim-Config	        >    ~/.config/nvim
 dev-tmux.sh         >    /usr/bin/dev
 ```
 
-### Fonts/Themes+Icons
+## Fonts/Themes+Icons
 
-** Make Directories **
+### Make Directories \*\*
 
-- ~/.icons
-- ~/.themes
+**~/.icons **
+
+- simple dark
+
+- vimix
+
+** ~/.themes **
+
+- juno
+
+- nordic-standard
+
+## Extract .tar Themes
+
+```
+tar.xz :
+
+tar -xf file.tar -C /path/to/dir
+
+
+tar.gz :
+
+tar -zxf file.tar --directory /path/to/directory
+
+```
