@@ -23,6 +23,7 @@ alias iscript="cd ~/Code/Systetm/Scripts/"
 alias nvdir="cd ~/Code/System/Nvim-Config"
 
 alias g="git "
+alias ga="git add "
 alias gc="git clone"
 alias gs="git status -sb"
 alias gaa="git add -A"
