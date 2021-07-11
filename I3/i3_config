@@ -31,6 +31,8 @@ exec --no-startup-id gnome-settings-daemon
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id NetworkManager
 
+exec i3-msg workspace 1
+exec i3-msg workspace 6
 # =============================================================================
 # ================================= AUDIO ================================
 # =============================================================================
@@ -175,22 +177,13 @@ bindsym $mod+Shift+9 move container to workspace 9
 # Auto assigning workspaces to specific monitors
 set $m1 DP-1 
 set $m2 HDMI-0
-#workspace $ws1 output $m1
-#workspace $ws3 output $m1
-#workspace $ws4 output $m1 
-#workspace $ws7 output $m1
-
-#workspace $ws2 output $m2
-#workspace $ws5 output $m2
-#workspace $ws6 output $m2
 
 workspace $ws1 output $m1
 workspace $ws2 output $m1
 workspace $ws3 output $m1
 workspace $ws4 output $m1 
+workspace $ws5 output $m1
 
-
-workspace $ws5 output $m2
 workspace $ws6 output $m2
 workspace $ws7 output $m2
 workspace $ws8 output $m2
@@ -198,17 +191,6 @@ workspace $ws9 output $m2
 # ========================== Workspace Assignments ============================
 # Get Class, Instance values : Open App, Term: #xprop | grep WM_CLASS, click app, term output
 # First is Instance, 2nd is class : WM_CLASS(String) = "Navigator", "firefox"
-
-# "1⟫ 〄Web"
-# "2⟫ ₪ Design"
-# "3⟫  Misc"
-# "4⟫ "
-
-# "6⟫  Dev"
-# "7⟫  Files"
-# "8⟫ Social"
-# "9⟫  Mail"
-
 
 
 # 1. Web
@@ -319,13 +301,6 @@ bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/shots/'
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::::::::: Customization ::::::::::::::::::::::::::::::::: 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-
-
-
 # =============================================================================
 # =============================== Key Bindings ================================
 # =============================================================================
