@@ -6,6 +6,7 @@
 ! #161a1f
 *.cursorColor:        #9CA391
 *.primary:            #79B0C0
+*.font_primary:       #A89984
 *.seconday:           #445994
 *.alert:              #B33634
 
