@@ -47,7 +47,10 @@ alias dots="nvim ~/Code/System/DotFiles/"
 alias cddf="cd ~/Code/System/DotFiles/"
 alias cdpy="cd ~/Code/Python"
 alias cdja="cd ~/Code/Java"
+
 alias cdjs="cd ~/Code/Javascript"
+alias cdjsds="cd ~/Code/Javascript/Practice-Tutorials/Algos_DataStructs_Masterclass"
+
 alias cdts="cd ~/Code/TypeScript"
 alias cdrs="cd ~/Code/Rust"
 alias cdcpp="cd ~/Code/C++"
