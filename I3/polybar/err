@@ -1,0 +1,7 @@
+polybar|notice:  Parsing config file: /home/prometheus/.config/polybar/config
+polybar|notice:  pulseaudio: using default sink alsa_output.usb-Logitech_Logitech_G35_Headset-00.analog-stereo
+polybar|notice:  Loaded font "Jet Brains Mono:pixelsize=13" (name=JetBrains Mono, offset=1, file=/usr/share/fonts/ttf/JetBrainsMono-Regular.ttf)
+polybar|notice:  Loaded font "Weather Icons:style=Regular:size=16" (name=Weather Icons, offset=2, file=/usr/share/fonts/ttf/weathericons-regular.ttf)
+polybar|notice:  Loaded font "Symbols Nerd Font:style=Regular:size=13" (name=Symbols Nerd Font, offset=0, file=/home/prometheus/.local/share/fonts/Unknown Vendor/TrueType/Symbols Nerd Font/Symbols_Nerd_Font_1000_em.ttf)
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)

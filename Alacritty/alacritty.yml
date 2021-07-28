@@ -155,7 +155,7 @@ colors: *gruvbox_material_hard_dark
 
 cursor:
   text: '#21130d'
-  cursor: '#abdbe3'
+  cursor: "#abdbe3"
 
 draw_bold_text_with_bright_colors: true
 
@@ -207,7 +207,7 @@ key_bindings:
   - { key: Paste,                                       action: Paste          }
   - { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
-  - { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
+  #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
   #- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
   #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
   #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
@@ -234,22 +234,22 @@ key_bindings:
   - { key: V,                           mode: Vi|~Search, action: ToggleNormalSelection   }
   - { key: V,      mods: Shift,         mode: Vi|~Search, action: ToggleLineSelection     }
   - { key: V,      mods: Control,       mode: Vi|~Search, action: ToggleBlockSelection    }
-  - { key: V,      mods: Alt,           mode: Vi|~Search, action: ToggleSemanticSelection }
-  - { key: Return,                      mode: Vi|~Search, action: Open                    }
+    #- { key: V,      mods: Alt,           mode: Vi|~Search, action: ToggleSemanticSelection }
+    #- { key: Return,                      mode: Vi|~Search, action: Open                    }
   - { key: K,                           mode: Vi|~Search, action: Up                      }
   - { key: J,                           mode: Vi|~Search, action: Down                    }
   - { key: H,                           mode: Vi|~Search, action: Left                    }
   - { key: L,                           mode: Vi|~Search, action: Right                   }
-  - { key: Up,                          mode: Vi|~Search, action: Up                      }
-  - { key: Down,                        mode: Vi|~Search, action: Down                    }
-  - { key: Left,                        mode: Vi|~Search, action: Left                    }
-  - { key: Right,                       mode: Vi|~Search, action: Right                   }
-  - { key: Key0,                        mode: Vi|~Search, action: First                   }
-  - { key: Key4,   mods: Shift,         mode: Vi|~Search, action: Last                    }
-  - { key: Key6,   mods: Shift,         mode: Vi|~Search, action: FirstOccupied           }
-  - { key: H,      mods: Shift,         mode: Vi|~Search, action: High                    }
-  - { key: M,      mods: Shift,         mode: Vi|~Search, action: Middle                  }
-  - { key: L,      mods: Shift,         mode: Vi|~Search, action: Low                     }
+  #- { key: Up,                          mode: Vi|~Search, action: Up                      }
+  #- { key: Down,                        mode: Vi|~Search, action: Down                    }
+  #- { key: Left,                        mode: Vi|~Search, action: Left                    }
+  #- { key: Right,                       mode: Vi|~Search, action: Right                   }
+  #- { key: Key0,                        mode: Vi|~Search, action: First                   }
+  #- { key: Key4,   mods: Shift,         mode: Vi|~Search, action: Last                    }
+  #- { key: Key6,   mods: Shift,         mode: Vi|~Search, action: FirstOccupied           }
+  #- { key: H,      mods: Shift,         mode: Vi|~Search, action: High                    }
+  #- { key: M,      mods: Shift,         mode: Vi|~Search, action: Middle                  }
+  #- { key: L,      mods: Shift,         mode: Vi|~Search, action: Low                     }
   - { key: B,                           mode: Vi|~Search, action: SemanticLeft            }
   - { key: W,                           mode: Vi|~Search, action: SemanticRight           }
   - { key: E,                           mode: Vi|~Search, action: SemanticRightEnd        }

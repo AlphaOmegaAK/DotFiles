@@ -8,36 +8,25 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
+
 
 if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
 
+
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
+
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
+
+
 
 # start some nice programs
 
@@ -51,5 +40,6 @@ fi
 #~/.fehbg &
 #picom -b --experimental-backends glx --config ~/.config/picom.conf &
 exec i3 
-#wmname compiz
 wmname LG3D
+#wmname compiz
+export _JAVA_AWT_WM_NONREPARENTING=1

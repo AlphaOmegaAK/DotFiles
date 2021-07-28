@@ -16,9 +16,10 @@ ln -s $(pwd)/I3/polybar/scripts ~/.config/polybar/scripts ;
 
 ln -s $(pwd)/rofi ~/.config/rofi ;
 
+rm ~/.tmux.conf
 ln -s $(pwd)/tmux.conf ~/.tmux.conf ;	
 ln -s $(pwd)/gitmux.conf ~/.gitmux.conf ;	
-ln -s $(pwd)/global_git_ignore ~/.gitignore ;
+ln -s $(pwd)/global_git_ignore ~/.global_git_ignore ;
 git config --global core.excludesfile ~/.global_git_ignore ;
 ln -s $(pwd)gitconfig ~/.gitconfig ;
 
