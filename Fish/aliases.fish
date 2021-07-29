@@ -49,7 +49,7 @@ alias cdpy="cd ~/Code/Python"
 alias cdja="cd ~/Code/Java"
 
 alias cdjs="cd ~/Code/Javascript"
-alias cdjsds="cd ~/Code/Javascript/Practice-Tutorials/Algos_DataStructs_Masterclass"
+alias cdds="cd ~/Code/Algos_DataStructs_Masterclass"
 
 alias cdts="cd ~/Code/TypeScript"
 alias cdrs="cd ~/Code/Rust"

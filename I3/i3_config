@@ -333,6 +333,11 @@ mode "Emacs Mode" {
 
 
   bindsym $mod+Escape mode "default"
+
+  bindsym XF86AudioPlay exec playerctl play-pause
+  bindsym XF86AudioPause exec playerctl stop
+  bindsym XF86AudioNext exec playerctl next
+  bindsym XF86AudioPrev exec playerctl previous 
 }
 
 bindsym $mod+0 mode "Emacs Mode"

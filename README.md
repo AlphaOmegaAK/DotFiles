@@ -23,6 +23,10 @@ $ ln -nfs /Users/(YourUser)/(Parent folder of dotfiles)/.gitconfig /User/(Your U
 ## List of DotFiles and their required locations/symlinks
 
 ```
+https://wiki.archlinux.org/title/XDG_Base_Directory
+```
+
+```
 ===== ~/* =====
 <FILE>                    <LOCATION>
 bashrc              >    ~/.bashrc
