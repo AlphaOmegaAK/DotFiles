@@ -1,3 +1,20 @@
+! Basic Syntax: name.Class.resource: value
+!   name: Name of application
+
+!   class: Classification used to group resources together. 
+!          Typically uppercase
+
+!   resource: Name of the resource whose value is to be changed. 
+!             Typically lowercase + uppercase concatenation
+
+!   value: Actual value of the resource, 1 of 3 things :
+!          - Integer (whole numbers)
+!          - Boolean (true/false, yes/no, on/off)
+!          - String (string of characters) 
+!            ie: white, #ffffff or path /usr/bin/
+
+!   delimiters: (.) Used to signify each step down into the hierarchy 
+
 ! Special
 
 *.foreground:         #b0b5bf

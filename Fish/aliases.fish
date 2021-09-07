@@ -6,6 +6,7 @@ alias v="nvim"
 alias cl="clear"
 alias chmox="chmod +x"
 alias echopath="echo '$PATH' | tr ':' '\n' | nl"
+alias notes="nvim ~/Documents/Notes/notes.md"
 
 alias so="source "
 
@@ -49,9 +50,10 @@ alias cdpy="cd ~/Code/Python"
 alias cdja="cd ~/Code/Java"
 
 alias cdjs="cd ~/Code/Javascript"
+alias cdht="cd ~/Code/HTML_CSS"
 alias cdds="cd ~/Code/Algos_DataStructs_Masterclass"
-
 alias cdts="cd ~/Code/TypeScript"
+
 alias cdrs="cd ~/Code/Rust"
 alias cdcpp="cd ~/Code/C++"
 alias cdbs="cd ~/Code/Scripts"

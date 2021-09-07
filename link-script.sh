@@ -15,6 +15,7 @@ ln -s $(pwd)/I3/polybar/config ~/.config/polybar/config ;
 ln -s $(pwd)/I3/polybar/scripts ~/.config/polybar/scripts ;
 
 ln -s $(pwd)/rofi ~/.config/rofi ;
+ln -s $(pwd)/I3/dunst ~/.config/dunst
 
 rm ~/.tmux.conf
 ln -s $(pwd)/tmux.conf ~/.tmux.conf ;	

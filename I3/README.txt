@@ -11,6 +11,10 @@
   - git clone https://github.com/terroo/i3-radius
   - cd i3-radius && sh build.sh
 
+[Dunst]
+# Dunst Config Location :
+  ~/.config/dunst/dunstrc
+
 
 [Poly Bar]
 Default polybar config : /usr/share/doc/polybar/config

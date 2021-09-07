@@ -172,14 +172,14 @@ window:
 font:
   normal:
     #family: "Fira Mono"
-    #family: "JetBrainsMono Nerd Font"
+    #family: "JetBrainsMono"
     #family: "Fira Code"
     family: "Iosevka"
     #family: "Consolas"
   bold:
     #family: "Fira Code"
     family: "Consolas"
-    style: Regular
+    style: bold
   italic:
     #family: "Fira Mono"
     family: "Consolas"

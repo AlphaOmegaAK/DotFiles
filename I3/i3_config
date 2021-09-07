@@ -62,11 +62,9 @@ bindsym $mod+q kill
 
 set $dmenu_launcher dmenu_run -i -nb '#393939' -nf '#48B685' -sb '#dfefe2' -sf '#393939'
 
-# --- start dmenu (a program launcher) ---
+# --- start dmenu / rofi (a program launcher) ---
 #bindsym $mod+d exec $dmenu_launcher
-#bindsym $mod+d exec rofi -show run  -lines 3 -eh -font "Menlo 11" -bw 3 -display-run "> " 
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 30 -padding 0 -opacity "55" -font "Fira Mono 10"
-#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 30 -padding 0 -opacity "55" -font "Consolas 10"
+bindsym $mod+Return exec --no-startup-id rofi -show run -lines 8 -columns 3 -eh 2 -width 30 -padding 20 -font "Fira Mono 10"
 
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
@@ -104,9 +102,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking;exec notify-send 'Stacked Layout'
+bindsym $mod+w layout tabbed;exec notify-send 'Tabbed Layout'
+bindsym $mod+e layout toggle split;exec notify-send 'Toggle Split'
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -115,7 +113,7 @@ bindsym $mod+Shift+space floating toggle
 #bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-#bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -226,12 +224,12 @@ assign [class="discord" instance="discord"] $ws8
 assign [class="Mailspring" instance="mailspring"] $ws9
 
 
-bindsym F1 exec alacritty
-bindsym F2 exec google-chrome-stable
-bindsym Shift+F2 exec emacs
-bindsym F3 exec thunar ~/
-bindsym F4 exec mailspring
-bindsym F5 exec thunar ~/Downloads
+bindsym F1 exec --no-startup-id alacritty
+bindsym F2 exec --no-startup-id google-chrome-stable
+bindsym Shift+F2 exec --no-startup-id emacs
+bindsym F3 exec --no-startup-id thunar ~/
+bindsym F4 exec --no-startup-id mailspring
+bindsym F5 exec --no-startup-id thunar ~/Downloads
 
 # --- Jump back to previous workspace with same key used to jump to new workspace
 workspace_auto_back_and_forth yes
@@ -297,8 +295,9 @@ bindsym $mod+shift+r mode "Resize"
 # --- Emacs Mode ---
 # So that $Mod (alt) key combinations work in emacs
 mode "Emacs Mode" {
-  # If there are any non-conflicting bindings for I3 list here
+# If there are any non-conflicting bindings for I3 list here
   
+# Workspace Binds
   bindsym $mod+1 workspace 1
   bindsym $mod+2 workspace 2
   bindsym $mod+3 workspace 3
@@ -311,6 +310,7 @@ mode "Emacs Mode" {
   bindsym $mod+9 workspace 9
   #bindsym $mod+0 workspace number $ws10
 
+# Window Movements
   # move focused container to workspace
   bindsym $mod+Shift+1 move container to workspace 1
   bindsym $mod+Shift+2 move container to workspace 2 
@@ -323,21 +323,31 @@ mode "Emacs Mode" {
   bindsym $mod+Shift+8 move container to workspace 8
   bindsym $mod+Shift+9 move container to workspace 9
 
-
-  bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth   
-
   bindsym $mod+Left focus left
   bindsym $mod+Down focus down
   bindsym $mod+Up focus up
   bindsym $mod+Right focus right
 
+  bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth   
 
-  bindsym $mod+Escape mode "default"
-
+# Sound
   bindsym XF86AudioPlay exec playerctl play-pause
   bindsym XF86AudioPause exec playerctl stop
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous 
+
+
+# Screenshots
+  # Print screen focused window
+  set $DATE='%m%d%Y'
+  bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/ScreenShots/'
+
+  # Print screen entire view
+  bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
+
+  bindsym F5 exec scrot -s '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
+# Exit Emacs Modes
+  bindsym $mod+Escape mode "default"
 }
 
 bindsym $mod+0 mode "Emacs Mode"
@@ -347,10 +357,10 @@ bindsym $mod+0 mode "Emacs Mode"
 
 # Print screen focused window
 set $DATE='%m%d%Y'
-bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/shots/'
+bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/ScreenShots/'
 
 # Print screen entire view
-bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/shots/'
+bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::::::::: Customization ::::::::::::::::::::::::::::::::: 
@@ -407,8 +417,10 @@ client.focused_inactive   #2f343f           #2f343f   $client_txt_color  #2f343f
 
 
 #  =========================== Start-ups ======================================
-exec xrandr --output HDMI-0 --auto --right-of DP-1 &
-exec picom --config ~/.config/picom.conf -b --experimental-backends &
+exec --no-startup-id xrandr --output HDMI-0 --auto --right-of DP-1 &
+exec --no-startup-id picom --config ~/.config/picom.conf -b --experimental-backends &
+
+exec --no-startup-id alacritty &
 
 #exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/dark-carbon-fiber.jpg
 exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/moonlight-green.jpg
