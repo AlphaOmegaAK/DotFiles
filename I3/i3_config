@@ -64,7 +64,8 @@ set $dmenu_launcher dmenu_run -i -nb '#393939' -nf '#48B685' -sb '#dfefe2' -sf '
 
 # --- start dmenu / rofi (a program launcher) ---
 #bindsym $mod+d exec $dmenu_launcher
-bindsym $mod+Return exec --no-startup-id rofi -show run -lines 8 -columns 3 -eh 2 -width 30 -padding 20 -font "Fira Mono 10"
+bindsym $mod+Return exec --no-startup-id rofi -show combi 
+#bindsym $mod+Return exec --no-startup-id rofi -show drun -lines 5 -columns 2 -eh 2 -width 20 -padding 10 -font "Iosevka 11" 
 
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
@@ -397,19 +398,20 @@ bindsym Mod1+Control+l mode "$mode_power"
 set $bgcolor #171A1C
 set $txtcolor #A99888
 set $client_txt_color #BDAE93
-set $client_brdr_clr #b17286
-set $client_child_brdr_clr #828374
-#set $client_child_brdr_clr #458588
+set $client_urgent_clr #b17286
+#set $client_child_brdr_clr #828374
+set $client_child_brdr_clr #458588
+set $client_brdr_clr #458588
 
 ##A89780 #D5C4A1 #35A0A6 #48B685
 
 
-# colour of               border,           backgrd,  text,              indictr,           child_brdr
-client.focused            $client_brdr_clr  #2f343f   $client_txt_color  $client_brdr_clr   $client_child_brdr_clr
-client.focused_inactive   #2f343f           #2f343f   $client_txt_color  #2f343f            #2f343f
-#client.unfocused         #2f343f           #2f343f   $client_txt_color  #2f343f            #2f343f
-#client.urgent            #2f343f           #2f343f   $client_txt_color  #2f343f            #2f343f
-#client.placeholder       #2f343f           #2f343f   $client_txt_color  #2f343f            #2f343f
+# colour of               border,               backgrd,  text,              indictr,           child_brdr
+client.focused            $client_brdr_clr      #2f343f   $client_txt_color  $client_brdr_clr   $client_child_brdr_clr
+client.focused_inactive   #2f343f               #2f343f   $client_txt_color  #2f343f            #2f343f
+#client.unfocused         #2f343f               #2f343f   $client_txt_color  #2f343f            #2f343f
+client.urgent             $client_urgent_clr    #2f343f   $client_txt_color  #2f343f            #2f343f
+#client.placeholder       #2f343f               #2f343f   $client_txt_color  #2f343f            #2f343f
 #client.background        #2f343f
 
 ## ##272B34 #0497d8 #8DDDD0 #293436 #181A1B
@@ -422,8 +424,9 @@ exec --no-startup-id picom --config ~/.config/picom.conf -b --experimental-backe
 
 exec --no-startup-id alacritty &
 
-#exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/dark-carbon-fiber.jpg
-exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/moonlight-green.jpg
+#exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/moonlight-green.jpg &
+exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/gruvbox_city.png &
+
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 
