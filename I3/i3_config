@@ -425,8 +425,8 @@ exec --no-startup-id picom --config ~/.config/picom.conf -b --experimental-backe
 exec --no-startup-id alacritty &
 
 #exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/moonlight-green.jpg &
-exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/gruvbox_city.png &
-
+exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/abstract-triangles.jpg &
+ 
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 

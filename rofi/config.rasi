@@ -1,10 +1,16 @@
 configuration {
     modi:"window,drun,ssh,combi";
     combi-modi: "window,drun,ssh,keys";
+    combi-hide-mode-prefix: true;
+    steal-focus: true;
+    show-icons: true;
+    width: 10;
+    
 }
 
 * {
-    font: "Jetbrains Mono 12";
+    /*font: "Jetbrains Mono 12";*/
+    font: "Iosevka 10";
     /*foreground: #f8f8f2;*/
     /*foreground: #fbf1c7;*/
 
@@ -33,9 +39,10 @@ configuration {
 #window {
     background-color: @background;
     border:           1;
-    border-radius: 15;
-    border-color: @bordercolor;
+    border-radius:    15;
+    border-color:     @bordercolor;
     padding:          5;
+    width:            40em;  
 }
 #mainbox {
     border:  0;
@@ -44,22 +51,23 @@ configuration {
 #message {
     border:       1px dash 0px 0px ;
     border-color: @separatorcolor;
-    padding:      1px ;
+    padding:      5px ;
 }
 #textbox {
     text-color: @foreground;
 }
 #listview {
     fixed-height: 0;
+    lines:        10;
     border:       2px dash 0px 0px ;
     border-color: @bordercolor;
     spacing:      2px ;
     scrollbar:    false;
-    padding:      2px 0px 0px ;
+    padding:      5px 0px 0px ;
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 5px ;
 }
 #element.normal.normal {
     background-color: @background;
