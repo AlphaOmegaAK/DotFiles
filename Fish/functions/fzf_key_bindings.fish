@@ -1,0 +1,1 @@
+/home/prometheus/.fzf/shell/key-bindings.fish
