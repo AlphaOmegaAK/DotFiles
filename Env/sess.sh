@@ -5,7 +5,7 @@ purple=$(tput setaf 100)
 reset=$(tput sgr0)
 
 # Menu
-PS3="${green}Choose Option / Window : "
+PS3="${green}Choose Option / Change Session : "
 IFS=$'\n' && options=("Create New Session" $(tmux list-session -F "#S" 2>/dev/null))
 echo ""
 echo -e "\e[0;33m Available Sessions :\e[0m "
