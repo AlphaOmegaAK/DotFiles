@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 green=$(tput setaf 2)
+purple=$(tput setaf 100)
+reset=$(tput sgr0)
 
 # Menu
 PS3="${green}Choose Option / Window : "
-IFS=$'\n' && options=("New Session" $(tmux list-session -F "#S" 2>/dev/null))
+IFS=$'\n' && options=("Create New Session" $(tmux list-session -F "#S" 2>/dev/null))
 echo ""
 echo -e "\e[0;33m Available Sessions :\e[0m "
 echo -e "\e[0;33m--------------------\e[0m"
@@ -12,7 +14,7 @@ echo -e "\e[0;33m--------------------\e[0m"
 select opt in "${options[@]}"
 do
     case $opt in
-        "New Session")
+        "Create New Session")
             read -p "Enter Session Name : " SESSION_NAME
             read -p "Enter Window Name : " WINDOW_NAME
         # Create the session if doesn't exist
@@ -25,18 +27,11 @@ do
         *)
         # Attach if outside tmux, switch if in tmux
             if [[ -z "$TMUX" ]]; then
-                tmux-attach -t "$SESSION_NAME"
+                tmux attach-session -t "$opt"
             else
-                tmux switch-client -t "$SESSION_NAME"
+                tmux switch-client -t "$opt"
             fi
             break
             ;;
     esac
 done
-
-
-
-
-# Check if tmux session exists
-
-
