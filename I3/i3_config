@@ -295,9 +295,9 @@ mode "Resize" {
 }
 bindsym $mod+shift+r mode "Resize"
 
-# --- Emacs Mode ---
+# --- Editor Mode ---
 # So that $Mod (alt) key combinations work in emacs
-mode "Emacs Mode" {
+mode "Editor Mode" {
 # If there are any non-conflicting bindings for I3 list here
   
 # Workspace Binds
@@ -343,17 +343,17 @@ mode "Emacs Mode" {
 # Screenshots
   # Print screen focused window
   set $DATE='%m%d%Y'
-  bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/ScreenShots/'
+  bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/ScreenShots/'; exec notify-send "Screenshot Taken - focused window"
 
   # Print screen entire view
-  bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
+  bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'; exec notify-send "Screenshot Taken"
 
-  bindsym F5 exec scrot -s '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
-# Exit Emacs Modes
-  bindsym $mod+Escape mode "default"
+  bindsym F5 exec scrot -s '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'; exec notify-send "Screenshot Taken - Selected Region"
+# Exit Editor Modes
+  bindsym $mod+Escape mode "default"; exec notify-send -u normal "Normal Mode"
 }
 
-bindsym $mod+0 mode "Emacs Mode"
+bindsym $mod+0 mode "Editor Mode"; exec notify-send -u normal "Editor Mode"
 
 
 
@@ -373,7 +373,7 @@ bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
 # =============================================================================
 
 # Cycle back & forth last workspace 
-bindsym Mod1+Tab     exec --no-startup-id i3-msg workspace back_and_forth   
+bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth   
 
 bindsym --no-startup-id $mod+Control+l exec "i3lock -i ~/Pictures/Wallpapers/poly-triangles.png -c 1c1e1f"
 
