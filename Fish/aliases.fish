@@ -35,13 +35,15 @@ alias gpush="git push"
 alias gpull="git pull"
 alias grim="git rebase -i master"
 
-alias lsd="ls -d .*"
+alias lsd="ls -d .* --color=auto"
 alias la="ls -a"
 
 alias rmd="rm -rf"
 
 alias ..="cd .."
-alias ...="cd ../.."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../../"
 alias cdcd="cd ~/Code/"
 alias cdtmp="cd ~/Code/tmp"
 alias dots="nvim ~/Code/System/DotFiles/"
@@ -66,6 +68,10 @@ alias cdconf="cd ~/.config"
 
 alias intellij="intellij-idea-community"
 alias dev="~/Code/System/DotFiles/Env/dev-tmux.sh"
+
+alias lsopenports="sudo lsof -i -P -n | grep LISTEN"
+alias netopenports="netstat -lntu"
+alias ssopenports="ss -lntu"
 
 alias pwroff="shutdown now"
 alias pwrcl="shutdown -c"

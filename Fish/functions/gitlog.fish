@@ -1,8 +1,4 @@
-# #
-# ~/.config/fish/functions/gitlog.fish
-# #
-
-function glog
+function gitlog
 	setterm -linewrap off 2> /dev/null
 
 	command git --no-pager log --all --color=always --graph --abbrev-commit --decorate --date-order \
