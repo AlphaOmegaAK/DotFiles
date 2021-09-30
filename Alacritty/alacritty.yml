@@ -9,7 +9,7 @@ env:
     #TERM: alacritty
 
 shell:
-  program: /usr/bin/fish 
+  program: /usr/bin/fish
   args:
     - -l
     - -c
@@ -171,23 +171,24 @@ window:
 
 font:
   normal:
-    #family: "Fira Mono"
-    #family: "JetBrainsMono"
-    #family: "Fira Code"
     family: "Iosevka"
     #family: "Consolas"
   bold:
     #family: "Fira Code"
-    family: "Consolas"
+    family: "Iosevka"
     style: bold
   italic:
     #family: "Fira Mono"
     family: "Consolas"
     style: Italic
-  size: 12.0
+  size: 11.5
   glyph_offset:
-    y: 1
+    y: 0
+    x: 1
   use_thin_strokes: true
+  offset:
+    x: 0 # Letter spacing
+    y: 1 # Line spacing
 
 
 
@@ -201,8 +202,8 @@ font:
   #- { key: Key0,      mods: Control,                    action: ResetFontSize  }
   #- { key: Equals,    mods: Control,                    action: IncreaseFontSize  }
   #- { key: Subtract,  mods: Control,                    action: DecreaseFontSize  }
-  
-  
+
+
 key_bindings:
   - { key: Paste,                                       action: Paste          }
   - { key: Copy,                                        action: Copy           }
@@ -314,7 +315,7 @@ key_bindings:
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
 
-  
+
 selection:
   save_to_clipboard: true
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>"
@@ -322,6 +323,6 @@ selection:
 mouse:
   double_click: {threshold: 300}
   triple_click: {threshold: 300}
- 
+
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
