@@ -25,3 +25,4 @@ source ~/.config/fish/aliases.fish
 
 # Created by `pipx` on 2021-04-03 01:34:41
 set PATH $PATH /home/alpha/.local/bin
+export PATH="$HOME/.cargo/bin:$PATH"
