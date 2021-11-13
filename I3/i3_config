@@ -221,7 +221,7 @@ assign [class="Thunar" instance="thunar"] $ws7
 # 8. Social
 for_window [class="Spotify"] move to workspace $ws8
 assign [class="discord" instance="discord"] $ws8
-assign [class="slack" instance="Slack"] $ws8
+assign [class="Slack" instance="slack"] $ws8
 
 # 9. Mail
 assign [class="Mailspring" instance="mailspring"] $ws9
