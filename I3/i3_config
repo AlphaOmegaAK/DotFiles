@@ -219,7 +219,7 @@ assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws7
 assign [class="Thunar" instance="thunar"] $ws7
 
 # 8. Social
-for_window [class="Spotify"] move to workspace $ws8
+for_window [class="Spotify"] move to workspace $ws9
 assign [class="discord" instance="discord"] $ws8
 assign [class="Slack" instance="slack"] $ws8
 
