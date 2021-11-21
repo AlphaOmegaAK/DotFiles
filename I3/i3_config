@@ -199,14 +199,18 @@ workspace $ws9 output $m2
 
 # 1. Web
 assign [class="firefox" instance="Navigator"] $ws1
-#assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
+assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
 assign [class="Google-chrome" instance="google-chrome"] $ws1
 
-# 2. Design
-assign [class="figma-linux" instance="figma-linux"] $ws2
+# 2. Test
+assign [class="DBeaver" instance="DBeaver"] $ws2
+assign [class="Postman" instance="postman"] $ws2
 
-# 3. Misc
+# 3. Notes
 assign [class="libreoffice-startcenter" instance="libreoffice"] $ws3
+
+# 4. Design
+assign [class="figma-linux" instance="figma-linux"] $ws2
 
 # 6. Dev
 assign [class="Alacritty" instance="Alacritty"] $ws6
@@ -357,8 +361,6 @@ mode "Editor Mode" {
 bindsym $mod+0 mode "Editor Mode"; exec notify-send -u normal "Editor Mode"
 
 
-
-
 # Print screen focused window
 set $DATE='%m%d%Y'
 bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/ScreenShots/'
@@ -369,6 +371,7 @@ bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::::::::: Customization :::::::::::::::::::::::::::::::::
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 # =============================================================================
 # =============================== Key Bindings ================================
 # =============================================================================
