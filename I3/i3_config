@@ -216,6 +216,7 @@ assign [class="figma-linux" instance="figma-linux"] $ws2
 assign [class="Alacritty" instance="Alacritty"] $ws6
 assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] $ws6
 assign [class="Code" instance="code"] $ws6
+assign [class="Eclipse" instance="Eclipse"] $ws6
 assign [class="Emacs" instance="emacs"] $ws6
 
 # 7. Files
@@ -249,7 +250,7 @@ popup_during_fullscreen smart
 
 for_window [window_role="pop-up"] floating enable
 for_window [class="jetbrains-idea-.*" title="win0"] floating enable;
-
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
 # ----- GAPS -----
 for_window [class=".*"] border pixel 2
 
