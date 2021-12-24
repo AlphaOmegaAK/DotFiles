@@ -4,7 +4,7 @@
 
 .env
 .vscode/
-.idea
+*.idea
 .DS_STORE
 .eslintcache
 npm_debug.log
@@ -21,6 +21,22 @@ build/Release
 dist/
 typings/
 .npm
-*.class
 jsconfig.json
 tsconfig.json
+bin/
+
+# Java Specific
+
+*.classpath
+*.project
+*.settings
+*.class
+*.iml
+*.jar
+*.war
+*.nar
+*.ear
+
+# Virtual Machine Error logs
+hs_err_pid*
+replay_pid*
