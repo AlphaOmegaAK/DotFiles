@@ -215,6 +215,7 @@ assign [class="figma-linux" instance="figma-linux"] $ws2
 # 6. Dev
 assign [class="Alacritty" instance="Alacritty"] $ws6
 assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] $ws6
+assign [class="jetbrains-idea" instance="jetbrains-idea"] $ws6
 assign [class="Code" instance="code"] $ws6
 assign [class="Eclipse" instance="Eclipse"] $ws6
 assign [class="Emacs" instance="emacs"] $ws6
