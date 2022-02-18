@@ -249,9 +249,11 @@ focus_on_window_activation urgent #smart
 popup_during_fullscreen smart
 
 
-for_window [window_role="pop-up"] floating enable
-for_window [class="jetbrains-idea-.*" title="win0"] floating enable;
-for_window [class="^jetbrains-.+"][window_type=dialog] focus
+# for_window [window_role="pop-up"] floating enable
+# for_window [class="jetbrains-idea-.*" title="win0"] floating enable;
+# for_window [class="^jetbrains-.+"][window_type=dialog] focus
+for_window [class="jetbrains-idea" instance="jetbrains-idea"][window_type=dialog] focus
+
 # ----- GAPS -----
 for_window [class=".*"] border pixel 2
 

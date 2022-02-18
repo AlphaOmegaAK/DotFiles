@@ -117,3 +117,8 @@ tar.gz :
 tar -zxf file.tar --directory /path/to/directory
 
 ```
+
+## Use Nvim as manpager
+```
+export MANGPAGER='nvim +Man!'
+```

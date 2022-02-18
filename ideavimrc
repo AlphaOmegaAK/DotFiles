@@ -1,0 +1,18 @@
+set hlsearch
+let mapleader = '<space>'
+nnoremap ,c :action GotoClass<CR>
+inoremap jk <Esc>
+nnoremap L $
+nnoremap H 0
+
+nnoremap ; :
+nnoremap : ;
+
+noremap <space>y "*y
+noremap <space>Y "*Y
+noremap <space>p "*p
+noremap <space>P "*P
+
+nnoremap / :action Find<cr>
+
+nnoremap <cr> :nohlsearch<cr>
