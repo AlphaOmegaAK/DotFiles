@@ -365,9 +365,8 @@ mode "Editor Mode" {
 bindsym $mod+0 mode "Editor Mode"; exec notify-send -u normal "Editor Mode"
 
 
-# Print screen focused window
-set $DATE='%m%d%Y'
-bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/ScreenShots/'
+# Capture Region
+bindsym F6 exec no-startup-id flameshot -id -c -p ~/Pictures/ScreenShots/
 
 # Print screen entire view
 bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'

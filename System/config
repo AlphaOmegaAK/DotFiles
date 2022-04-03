@@ -1,0 +1,25 @@
+Host valkyrie
+	HostName 192.168.1.11
+	User pruor
+	Port 2223
+	IdentityFile ~/.ssh/Server_Keys/valkyrie_ed25519
+
+Host expanse
+	HostName 192.168.1.12
+	User rocinante
+	Port 2223
+	IdentityFile ~/.ssh/Server_Keys/expanse_ed25519
+
+Host underworld
+	HostName 192.168.1.13
+	User hades
+	Port 2223
+	IdentityFile ~/.ssh/Server_Keys/prometheus_ed25519
+
+Host github.com
+	HostName github.com
+	User git
+	port 22
+	TcpKeepAlive yes
+	IdentityFile ~/.ssh/github_ed25519
+	IdentitiesOnly yes
