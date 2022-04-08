@@ -348,28 +348,18 @@ mode "Editor Mode" {
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous
 
-
-# Screenshots
-  # Print screen focused window
-  set $DATE='%m%d%Y'
-  # bindsym F6 exec scrot -u '%m%d%Y_%H%M.png' -e 'mv $f ~/Pictures/ScreenShots/'; exec notify-send "Screenshot Taken - focused window"
-
-  # Print screen entire view
-  bindsym Shift+F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'; exec notify-send "Screenshot Taken"
-
-  bindsym Shift+F5 exec scrot -s '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'; exec notify-send "Screenshot Taken - Selected Region"
 # Exit Editor Modes
   bindsym $mod+Escape mode "default"; exec notify-send -u normal "Normal Mode"
 }
 
 bindsym $mod+0 mode "Editor Mode"; exec notify-send -u normal "Editor Mode"
 
+bindsym F6 exec --no-startup-id flameshot gui; exec notify-send "Screenshot Saved To Clipboard"
 
 # Capture Region
-bindsym F6 exec no-startup-id flameshot -id -c -p ~/Pictures/ScreenShots/
 
 # Print screen entire view
-bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
+# bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::::::::: Customization :::::::::::::::::::::::::::::::::
