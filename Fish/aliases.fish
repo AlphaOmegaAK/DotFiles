@@ -7,10 +7,10 @@ alias cl="clear"
 alias chmox="chmod +x"
 alias echopath="echo '$PATH' | tr ':' '\n' | nl"
 alias notes="nvim ~/Documents/Notes/notes.md"
+alias todo="nvim ~/TODO/TODO.md"
 
 alias so="source "
 
-alias todo="nvim ~/Documents/todo.md"
 alias joplin="joplin-james-carroll.joplin"
 alias intj="intellij-idea-community"
 
@@ -43,6 +43,7 @@ alias grim="git rebase -i master"
 
 alias lsd="ls -d .* --color=auto"
 alias la="ls -a"
+alias lal= "ls -la --block-size=M"
 
 alias rmd="rm -rf"
 
@@ -71,7 +72,6 @@ alias cdhl="cd ~/Code/Homelab/"
 alias cdcc="cd ~/Code/Code_Challenges"
 alias cdms="cd ~/Code/Misc"
 alias cddl="cd ~/Downloads"
-alias cdconf="cd ~/.config"
 
 alias intellij="intellij-idea-community"
 alias dev="~/Code/System/DotFiles/Env/dev-tmux.sh"
@@ -79,7 +79,8 @@ alias dev="~/Code/System/DotFiles/Env/dev-tmux.sh"
 alias lsopenports="sudo lsof -i -P -n | grep LISTEN"
 alias netopenports="netstat -lntu"
 alias ssopenports="ss -lntu"
+alias showports="netstat -tuplen"
 
-alias pwroff="shutdown now"
+alias pwroff="shutdown -h now"
 alias pwrcl="shutdown -c"
 alias reboot="shutdown -r"
