@@ -6,10 +6,13 @@ alias v="nvim"
 alias cl="clear"
 alias chmox="chmod +x"
 alias echopath="echo '$PATH' | tr ':' '\n' | nl"
+
 alias notes="nvim ~/Documents/Notes/notes.md"
 alias todo="nvim ~/TODO/TODO.md"
+alias hln="$HOME/Code/System/DotFiles/Env/bookmarks.sh"
+alias hlc="nvim $HOME/Code/Homelab/Homelab_Server_Configs"
 
-alias so="source "
+alias so="source"
 
 alias joplin="joplin-james-carroll.joplin"
 alias intj="intellij-idea-community"
