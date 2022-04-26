@@ -270,8 +270,10 @@ gaps outer 2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 #bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -302,60 +304,56 @@ mode "Resize" {
 bindsym $mod+shift+r mode "Resize"
 
 # --- Editor Mode ---
-# So that $Mod (alt) key combinations work in emacs
+# So that $Mod (alt) key combinations work in emacs + other idea k
 mode "Editor Mode" {
 # If there are any non-conflicting bindings for I3 list here
 # Workspace Binds
-  bindsym $mod+1 workspace 1
-  bindsym $mod+2 workspace 2
-  bindsym $mod+3 workspace 3
-  bindsym $mod+4 workspace 4
-  bindsym $mod+5 workspace 5
+	bindsym $mod+1 workspace 1
+	bindsym $mod+2 workspace 2
+	bindsym $mod+3 workspace 3
+	bindsym $mod+4 workspace 4
+	bindsym $mod+5 workspace 5
 
-  bindsym $mod+6 workspace 6
-  bindsym $mod+7 workspace 7
-  bindsym $mod+8 workspace 8
-  bindsym $mod+9 workspace 9
-  #bindsym $mod+0 workspace number $ws10
+	bindsym $mod+6 workspace 6
+	bindsym $mod+7 workspace 7
+	bindsym $mod+8 workspace 8
+	bindsym $mod+9 workspace 9
+	#bindsy $mod+0 workspace number $ws10
 
-# Window Movements
-  # move focused container to workspace
-  bindsym $mod+Shift+1 move container to workspace 1
-  bindsym $mod+Shift+2 move container to workspace 2
-  bindsym $mod+Shift+3 move container to workspace 3
-  bindsym $mod+Shift+4 move container to workspace 4
-  bindsym $mod+Shift+5 move container to workspace 5
+	# Window Movements
+	# move focused container to workspace
+	bindsym $mod+Shift+1 move container to workspace 1
+	bindsym $mod+Shift+2 move container to workspace 2
+	bindsym $mod+Shift+3 move container to workspace 3
+	bindsym $mod+Shift+4 move container to workspace 4
+	bindsym $mod+Shift+5 move container to workspace 5
 
-  bindsym $mod+Shift+6 move container to workspace 6
-  bindsym $mod+Shift+7 move container to workspace 7
-  bindsym $mod+Shift+8 move container to workspace 8
-  bindsym $mod+Shift+9 move container to workspace 9
+	bindsym $mod+Shift+6 move container to workspace 6
+	bindsym $mod+Shift+7 move container to workspace 7
+	bindsym $mod+Shift+8 move container to workspace 8
+	bindsym $mod+Shift+9 move container to workspace 9
 
-  bindsym $mod+Left focus left
-  bindsym $mod+Down focus down
-  bindsym $mod+Up focus up
-  bindsym $mod+Right focus right
+	bindsym $mod+Left focus left
+	bindsym $mod+Down focus down
+	bindsym $mod+Up focus up
+	bindsym $mod+Right focus right
 
-  bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth
+	bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth
 
 # Sound
-  bindsym XF86AudioPlay exec playerctl play-pause
-  bindsym XF86AudioPause exec playerctl stop
-  bindsym XF86AudioNext exec playerctl next
-  bindsym XF86AudioPrev exec playerctl previous
+	bindsym XF86AudioPlay exec playerctl play-pause
+	bindsym XF86AudioPause exec playerctl stop
+	bindsym XF86AudioNext exec playerctl next
+	bindsym XF86AudioPrev exec playerctl previous
 
 # Exit Editor Modes
-  bindsym $mod+Escape mode "default"; exec notify-send -u normal "Normal Mode"
+	bindsym $mod+Escape mode "default"; exec notify-send -u normal "Normal Mode"
 }
 
 bindsym $mod+0 mode "Editor Mode"; exec notify-send -u normal "Editor Mode"
 
 bindsym F6 exec --no-startup-id flameshot gui; exec notify-send "Screenshot Saved To Clipboard"
 
-# Capture Region
-
-# Print screen entire view
-# bindsym F7 exec scrot '%m%d%Y_%H%M.png'-e 'mv $f ~/Pictures/ScreenShots/'
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::::::::: Customization :::::::::::::::::::::::::::::::::
@@ -368,34 +366,18 @@ bindsym F6 exec --no-startup-id flameshot gui; exec notify-send "Screenshot Save
 # Cycle back & forth last workspace
 bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth
 
-bindsym --no-startup-id $mod+Control+l exec "i3lock -i ~/Pictures/Wallpapers/poly-triangles.png -c 1c1e1f"
-
-set $Locker i3lock -nf -i $HOME/Pictures/Wallpapers/poly-triangles.png && sleep 1
-
-# set $mode_power Power (l) lock (e) logout (s) suspend (h) hibernate (r) reboot (Shift+s) Shutdown
-
-# mode "$mode_power" {
-#     bindsym l exec --no-startup-id $Locker, mode "default"
-#     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-#     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-#     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-#     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-#     bindsym Shift+s exec --no-startup-id shutdown -h now, mode "default"
-
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
-# bindsym Mod1+Control+l mode "$mode_power"
-
-# set $sysmenu "  [<br>r</b>estart] - [<b>l</b>]ogout - [<b>s</b>]uspend - re[<b>b</b>]oot - po[<b>w</b>]eroff  "
-set $sysmenu (r)estart - (l)ogout - (s)uspend - re(b)oot - po(w)eroff - [Esc/Enter] exit
+# =============================================================================
+# ================================ Power Menu =================================
+# =============================================================================
+set $sysmenu (r)estart - <(l)ock - l(o)gout - (s)uspend - re(b)oot - po(w)eroff - [Esc/Enter] exit
 
 mode "$sysmenu" {
 	bindsym r restart
-	bindsym l exit
+	bindsym l exec "~/.config/i3lock/i3lock.sh", mode "default"
+	bindsym o exit
 	bindsym w exec "systemctl poweroff"
 	bindsym b exec "systemctl reboot"
-	bindsym s exec "systemctl suspend"
+	bindsym s exec "systemctl suspend", mode "default"
 	bindsym Return mode "default"; exec notify-send -u normal "Power Menu Exited"
 	bindsym Escape mode "default"; exec notify-send -u normal "Power Menu Exited"
 }
