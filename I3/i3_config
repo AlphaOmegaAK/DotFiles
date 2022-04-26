@@ -369,7 +369,7 @@ bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth
 # =============================================================================
 # ================================ Power Menu =================================
 # =============================================================================
-set $sysmenu (r)estart - <(l)ock - l(o)gout - (s)uspend - re(b)oot - po(w)eroff - [Esc/Enter] exit
+set $sysmenu (r)estart - (l)ock - l(o)gout - (s)uspend - re(b)oot - po(w)eroff - [Esc/Enter] exit
 
 mode "$sysmenu" {
 	bindsym r restart
