@@ -14,7 +14,7 @@ set $mod Mod1
 
 #font pango:Hack, FontAwesome 8
 #font pango:monospace 10
-font pango:Iosevka 10
+font pango: Iosevka 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -44,10 +44,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl stop
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-idplayerctl play-pause
+bindsym XF86AudioPause exec --no-startup-idplayerctl stop
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-idplayerctl previous
 
 
 # --- Use Mouse+$mod to drag floating windows to their wanted position
@@ -249,12 +249,9 @@ focus_on_window_activation urgent #smart
 popup_during_fullscreen smart
 
 
-# for_window [window_role="pop-up"] floating enable
-# for_window [class="jetbrains-idea-.*" title="win0"] floating enable;
-# for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [class="jetbrains-idea" instance="jetbrains-idea"][window_type=dialog] focus
 
-# ----- GAPS -----
+# ----- GAPS /Spacing -----
 for_window [class=".*"] border pixel 2
 
 #gaps inner all set 10
@@ -308,7 +305,6 @@ bindsym $mod+shift+r mode "Resize"
 # So that $Mod (alt) key combinations work in emacs
 mode "Editor Mode" {
 # If there are any non-conflicting bindings for I3 list here
-
 # Workspace Binds
   bindsym $mod+1 workspace 1
   bindsym $mod+2 workspace 2
@@ -374,23 +370,37 @@ bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth
 
 bindsym --no-startup-id $mod+Control+l exec "i3lock -i ~/Pictures/Wallpapers/poly-triangles.png -c 1c1e1f"
 
-set $mode_power Power (l) lock (e) logout (s) suspend (h) hibernate (r) reboot (Shift+s) Shutdown
-
 set $Locker i3lock -nf -i $HOME/Pictures/Wallpapers/poly-triangles.png && sleep 1
 
-mode "$mode_power" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+# set $mode_power Power (l) lock (e) logout (s) suspend (h) hibernate (r) reboot (Shift+s) Shutdown
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+# mode "$mode_power" {
+#     bindsym l exec --no-startup-id $Locker, mode "default"
+#     bindsym e exec --no-startup-id i3-msg exit, mode "default"
+#     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+#     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+#     bindsym r exec --no-startup-id systemctl reboot, mode "default"
+#     bindsym Shift+s exec --no-startup-id shutdown -h now, mode "default"
+
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
+# bindsym Mod1+Control+l mode "$mode_power"
+
+# set $sysmenu "  [<br>r</b>estart] - [<b>l</b>]ogout - [<b>s</b>]uspend - re[<b>b</b>]oot - po[<b>w</b>]eroff  "
+set $sysmenu (r)estart - (l)ogout - (s)uspend - re(b)oot - po(w)eroff - [Esc/Enter] exit
+
+mode "$sysmenu" {
+	bindsym r restart
+	bindsym l exit
+	bindsym w exec "systemctl poweroff"
+	bindsym b exec "systemctl reboot"
+	bindsym s exec "systemctl suspend"
+	bindsym Return mode "default"; exec notify-send -u normal "Power Menu Exited"
+	bindsym Escape mode "default"; exec notify-send -u normal "Power Menu Exited"
 }
 
-bindsym Mod1+Control+l mode "$mode_power"
+bindsym Mod1+Control+l mode "$sysmenu"; exec notify-send -u normal "Power Menu"
 
 
 
@@ -429,10 +439,4 @@ exec --no-startup-id alacritty &
 #exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/moonlight-green.jpg &
 exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/abstract-triangles.jpg &
 
-
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
-
-#bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
-#bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
-#bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
-#bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
