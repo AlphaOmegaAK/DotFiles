@@ -413,7 +413,16 @@ client.urgent             $client_urgent_clr    #2f343f   $client_txt_color  #2f
 
 
 #  =========================== Start-ups ======================================
-exec --no-startup-id xrandr --output HDMI-0 --auto --right-of DP-1 &
+# Side-by-side DPI-1 on left, HDMI-0 on right
+# exec --no-startup-id xrandr --output HDMI-0 --auto --right-of DP-1 &
+
+# Stacked configuration no centering between the two displays
+# exec --no-startup-id xrandr --output DP-1 --auto --below HDMI-0 &
+
+# Stacked configuration manually centered
+exec --no-startup-id xrandr --output DP-1 --auto --primary --pos 0x0 --rotate normal --output HDMI-0 --auto --pos 750x-1425 --rotate normal &
+
+# Window Composer
 #exec --no-startup-id picom --config ~/.config/picom.conf -b --experimental-backends &
 
 exec --no-startup-id alacritty &

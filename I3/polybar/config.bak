@@ -103,7 +103,7 @@ font-2 = ${fonts.font-2}
 #dpi-y = 96
 
 
-modules-left = powermenu pulseaudio pomodoro serverWoL
+modules-left = powermenu pulseaudio pomodoro
 modules-center = i3
 modules-right = date openweathermap
 
@@ -608,11 +608,6 @@ scroll-down = ~/.config/polybar/scripts/pomodoro.sh time -60
 
 font-0 = ${fonts.fonts-0}
 font-1 = ${fonts.font-1}
-
-[module/serverWoL]
-type = custom/script
-content = " SERVER WOL "
-click-left = bash ~/Code/System/DotFiles/I3/polybar/scripts/serverWOL.sh
 
 
 ;neovim:ft=dosini
