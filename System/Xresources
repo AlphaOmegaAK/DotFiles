@@ -1,21 +1,22 @@
 ! Basic Syntax: name.Class.resource: value
 !   name: Name of application
 
-!   class: Classification used to group resources together. 
+!   class: Classification used to group resources together.
 !          Typically uppercase
 
-!   resource: Name of the resource whose value is to be changed. 
+!   resource: Name of the resource whose value is to be changed.
 !             Typically lowercase + uppercase concatenation
 
 !   value: Actual value of the resource, 1 of 3 things :
 !          - Integer (whole numbers)
 !          - Boolean (true/false, yes/no, on/off)
-!          - String (string of characters) 
+!          - String (string of characters)
 !            ie: white, #ffffff or path /usr/bin/
 
-!   delimiters: (.) Used to signify each step down into the hierarchy 
+!   delimiters: (.) Used to signify each step down into the hierarchy
 
 ! Special
+Xcursor.size: 24
 
 *.foreground:         #b0b5bf
 *.background:         #1a2026
@@ -45,11 +46,11 @@
 *.gruvbox_light_grey:        #A89984
 *.gruvbox_dark_orange :     #D65D0E
 *.gruvbox_light_orange :    #FE8019
-*.gruvbox_dark_orange :     #AE6931
+*.gruvbox_darker_orange :     #AE6931
 
 
 *.onedark_black :           #282C34
-*.onedark_white :           #ABB2BF       
+*.onedark_white :           #ABB2BF
 *.onedark_lt_red :          #E06C75
 *.onedark_dk_red :          #BE5046
 *.onedark_green :           #98C379
@@ -62,21 +63,20 @@
 *.onedark_grey_2 :          #5C6370
 
 ! Dark Colors -----
-
-*.color0:             #1F232B
-*.color7:             #232629
-*.color14:            #2a2e32
-*.color21:            #39404F
-*.color28:            #39404F
-*.color35:            #363C50
-*.color42:            #31363b
-*.color49:            #2F343F
+*.color0 :             #1F232B
+*.color7 :             #232629
+*.color14 :            #2a2e32
+*.color21 :            #39404F
+*.color28 :            #39404F
+*.color35 :            #363C50
+*.color42 :            #31363b
+*.color49 :            #2F343F
 !*.color56:
 !*.color63:
 !*.color70:
 !*.color77:
+
 ! Reds Colors -----
-￼
 *.color1:             #b3202f
 *.color8:             #732931
 *.color15:            #BD7C75
@@ -120,7 +120,7 @@
 
 
 ! Yellows Colors -----
-*.color4:             #fff1c1 
+*.color4:             #fff1c1
 *.color11:            #F9C991
 *.color18:            #E1AA5D
 *.color25:            #E5C07B
@@ -162,10 +162,3 @@
 !*.color69:
 !*.color76:
 !*.color83:
-
-
-
-
-
-
-
