@@ -1,0 +1,11 @@
+-- Vim plugins
+clone https://github.com/jeffreytse/zsh-vi-mode \
+    $ZSH_CUSTOM/plugins/zsh-vi-mode
+
+Add: plugins+=(zsh-vi-mode)
+or append to plugins: zsh-vi-mode
+
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+Append to plugins: zsh-autosuggestions

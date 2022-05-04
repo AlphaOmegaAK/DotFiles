@@ -1,0 +1,14 @@
+--- Vi-Mode
+Clone to ~/.zsh:
+https://github.com/jeffreytse/zsh-vi-mode.git ~/.zsh/zsh-autosuggestions
+
+Add to .zshrc:
+source ~/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+
+--- Auto Suggestions
+Clone to ~/.zsh:
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+Add to .zshrc:
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
