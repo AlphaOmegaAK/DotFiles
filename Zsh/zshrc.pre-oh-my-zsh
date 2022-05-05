@@ -19,7 +19,7 @@ bindkey -v
 
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit promptinit
-compinit
+# compinit
 promptinit
 prompt walters
 
