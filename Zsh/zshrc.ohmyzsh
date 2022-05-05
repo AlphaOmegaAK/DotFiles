@@ -111,7 +111,8 @@ alias rmd='rm -rf'
 alias ls='ls -p --color=auto'
 alias lsd='ls -d .* --color=auto'
 alias la='ls -a'
-alias lal= 'ls -la --block-size=M'
+alias lal='ls -la --block-size=M'
+alias ll='ls -la'
 
 
 
@@ -221,12 +222,9 @@ setopt PUSHD_IGNORE_DUPS
 ## This reverts the +/- operators.
 setopt PUSHD_MINUS
 
-# PROMPT='${ret_status} %m %{$fg[cyan]%}%c%{$reset_color%} > '
-# PROMPT='%F{red}┌[%F{yellow}%n%F{reset_color}@%F{green}%m%F{red}]  %F{240}%2~%f%b %(?.%F{blue}√.%F{red} %?)%f
-# %F{red}└─>>%F{reset_color} '
 
-PROMPT='%F{red}┌[%F{yellow}%n%F{reset_color}@%F{green}%m%F{red}]  %F{240}${(%):-%~}%f %(?.%F{blue}√.%F{red} %?)%f
-%F{red}└─>>%F{reset_color} '
+# PROMPT='%F{red}┌[%F{yellow}%n%F{reset_color}@%F{green}%m%F{red}]  %F{240}${(%):-%~}%f %(?.%F{blue}√.%F{red} %?)%f
+# %F{red}└─>>%F{reset_color} '
 
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#584945,bg=#1a2026"
