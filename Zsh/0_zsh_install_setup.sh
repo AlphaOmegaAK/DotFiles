@@ -28,18 +28,31 @@ else
 	# Check if oh my zsh is not installed, if not then manually add auto sug + auto comp
 	echo "ZSH already installed, skipping ZSH install ..."
 
+	ZSHCONFIGDIR="~/.config/zsh"
+	if [[ ! -L $ZSHCONFIGDIR ]] || [[ ! -d $ZSHCONFIGDIR ]]; then
+		echo "Creating zsh/ in config dir"
+		mkdir -p ~/.config/zsh
+	fi
+
 	OHMYZSH="$HOME/.oh-my-zsh/"
 	if [[ ! -L $OHMYZSH ]] || [[ ! -d $OHMYZSH ]]; then
 		echo "Oh-My-Zsh not installed, manually setting up auto suggestions and completion"
+
 		# Install auto suggestions
-		git clone -- depth 1 -- https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+		git clone -- depth 1 -- https://github.com/zsh-users/zsh-autosuggestions ~/config/zsh/zsh-autosuggestions
 		# Add auto suggestions to zshrc
-		echo "Adding Auto Suggestions zshrc"
-		echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" | tee -a  ~/.zshrc
+		echo "Adding Auto Suggestions to zshrc"
+		echo "source ~/config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" | tee -a  ~/.zshrc
+
 		# Install auto complete
-		git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
-		echo "Adding Autocomplete zshrc"
-		echo "source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" | tee -a ~/.zshrc
+		git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/config/zsh/zsh-autocomplete
+		echo "Adding Autocomplete to zshrc"
+		echo "source ~/config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" | tee -a ~/.zshrc
+
+		# Install syntax highlighting
+		git clone --depth 1 -- git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/config/zsh/zsh-syntax-highlighting
+		echo "Adding Syntax Highlighting to  zshrc"
+		echo "source ~/config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" | tee -a ~/.zshrc
 
 		exit 0
 	fi
