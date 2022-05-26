@@ -33,6 +33,8 @@ yes | pacman -S \
 	ufw				\
 	vlc				\
 	wget			\
+	zsh				\
+	zsh-completions \
 
 
 
