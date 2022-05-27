@@ -8,7 +8,7 @@ if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; 
 export CLICOLOR_FORCE=1
 
 
-#Undo Push 
+#Undo Push
 alias undopush="git push -f origin HEAD^:master"
 
 # File Size
@@ -44,3 +44,29 @@ alias v="nvim"
 
 alias py="python3"
 alias no="node"
+
+
+if [[ "$OSTYPE" == 'linux-gnu'* ]]; then
+    alias lt='ls --human-readable --size -1 -S --classify'
+
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    alias lt='du -sh * | sort -h'
+
+else
+    alias ls="ls -F"
+    alias ll="ls -al"
+    alias v="nvim"
+    alisa vi="vim"
+
+    alias .1="cd .."
+    alias .2="cd ../.."
+    alias .3="cd ../../.."
+    alias .4="cd ../../../.."
+
+    alias mnt='mount | grep -E ^/dev | column -t'
+
+    alias cpv='rsync -ah --info=progress2'
+fi
+end
+
+

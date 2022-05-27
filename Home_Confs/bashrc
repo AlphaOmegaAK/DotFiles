@@ -1,6 +1,16 @@
-# # 
+# #
 # .bashrc
-# # 
+# #
+PS1="\e[1;31m[\e[0m\e[0;33m\u\e[0m\e[0;34m@\e[0m\e[0;32m\H\e[0m\e[1;31m]\e[0m : \w\n  \e[1;31m>\e[0m "
+
+
+alias ls='ls --color=auto'
+
+alias tmux='TERM=screen-256color tmux'
+
+alias luamake=/home/prometheus/Code/tmp/lua-language-server/3rd/luamake/luamake
+
+alias showports='netstat -tuplen'
 
 glog() {
 	setterm -linewrap off 2> /dev/null
@@ -81,3 +91,6 @@ lazygit [OPTION]... <msg>
 	fi
 	unset USAGE COMMIT MESSAGE AMEND FORCE
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export EDITOR=nvim;
