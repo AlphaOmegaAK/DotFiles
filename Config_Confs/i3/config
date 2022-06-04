@@ -420,7 +420,7 @@ client.urgent             $client_urgent_clr    #2f343f   $client_txt_color  #2f
 # exec --no-startup-id xrandr --output DP-1 --auto --below HDMI-0 &
 
 # Stacked configuration manually centered
-exec --no-startup-id xrandr --output DP-1 --auto --primary --pos 0x0 --rotate normal --output HDMI-0 --auto --pos 750x-1425 --rotate normal &
+# exec --no-startup-id xrandr --output DisplayPort-3 --auto --primary --pos 0x0 --rotate normal --output HDMI-A-1 --auto --pos 750x-1425 --rotate normal &
 
 # Window Composer
 #exec --no-startup-id picom --config ~/.config/picom.conf -b --experimental-backends &

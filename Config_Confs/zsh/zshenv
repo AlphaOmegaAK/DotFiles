@@ -1,1 +1,3 @@
 source -- "$ZDOTDIR"/zshrc
+
+export PATH="/.local/share/nvim/lsp_servers:$PATH"

@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
-echo "$(nvidia-smi --query-gpu=temperature.gpu --format=csv | sed '1d')°C"
+# Nvidia
+# echo "$(nvidia-smi --query-gpu=temperature.gpu --format=csv | sed '1d')°C"
 
+# AMD
+
+celcius="°C"
+dirty_temp=$(cat /sys/class/drm/card0/device/hwmon/hwmon2/temp1_input)
+echo "${dirty_temp::-3}$celcius"

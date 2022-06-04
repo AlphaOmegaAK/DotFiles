@@ -36,6 +36,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+xrandr --output DisplayPort-2 --mode 3440x1440 --rate 100.00 --primary --pos 0x0 --rotate normal --output HDMI-A-0 --mode 1920x1080  --rate 120.00 --pos 750x-1425 --rotate normal
+
 #~/.fehbg &
 if [ -e ~/.Xresources ] || [ -L ~/.Xresources ]
 then

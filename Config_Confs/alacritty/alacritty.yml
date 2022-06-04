@@ -9,7 +9,7 @@ env:
     #TERM: alacritty
 
 shell:
-  program: /usr/bin/fish
+  program: /usr/bin/zsh
   args:
     - -l
     - -c
@@ -173,14 +173,20 @@ window:
 font:
   normal:
     family: "Iosevka"
-    #family: "Consolas"
+    # family: "Sarasa Mono"
+    # family: "Jetbrains Mono"
   bold:
-    #family: "Fira Code"
     family: "Iosevka"
+    #family: "Fira Code"
+    # family: "Sarasa Mono"
+    # family: "Jetbrains Mono"
     style: bold
   italic:
+    family: "Iosevka"
     #family: "Fira Mono"
-    family: "Consolas"
+    # family: "Consolas"
+    # family: "Sarasa Mono"
+    # family: "Jetbrains Mono"
     style: Italic
   size: 11.5
   glyph_offset:

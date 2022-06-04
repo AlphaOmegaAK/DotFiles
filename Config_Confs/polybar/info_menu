@@ -1,0 +1,22 @@
+[module/infomenu]
+type = custom/menu
+
+expand-right = true
+
+menu-0-0 = CPU
+
+menu-0-1 = GPU
+
+menu-0-2 = MEM
+
+menu-0-3 = NET
+
+
+format-spacing = 1
+format-foreground = ${colors.blue}
+format-background = ${colors.bg1}
+format-padding = 2
+
+label-open = 
+label-close = ﰇ
+label-separator = ""
