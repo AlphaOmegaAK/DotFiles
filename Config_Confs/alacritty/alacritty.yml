@@ -168,7 +168,10 @@ window:
     lines: 50
   #decorations: none
   decorations: full
-  opacity: 0.85
+  # opacity: 0.85
+  padding:
+    x: 15
+    y: 10
 
 font:
   normal:
@@ -177,14 +180,13 @@ font:
     # family: "Jetbrains Mono"
   bold:
     family: "Iosevka"
+    style: bold
     #family: "Fira Code"
     # family: "Sarasa Mono"
     # family: "Jetbrains Mono"
-    style: bold
   italic:
     family: "Iosevka"
     #family: "Fira Mono"
-    # family: "Consolas"
     # family: "Sarasa Mono"
     # family: "Jetbrains Mono"
     style: Italic
@@ -195,7 +197,7 @@ font:
   use_thin_strokes: true
   offset:
     x: 0 # Letter spacing
-    y: 1 # Line spacing
+    y: 2 # Line spacing
 
 
 

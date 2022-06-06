@@ -176,8 +176,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 #bindsym $mod+Shift+0 move container to workspace  number $ws10
 
 # Auto assigning workspaces to specific monitors
-set $m1 DP-1
-set $m2 HDMI-0
+set $m1 DisplayPort-2
+set $m2 HDMI-A-0
 
 exec i3-msg workspace 1
 exec i3-msg workspace 6
@@ -201,6 +201,7 @@ workspace $ws9 output $m2
 assign [class="firefox" instance="Navigator"] $ws1
 assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
 assign [class="Google-chrome" instance="google-chrome"] $ws1
+assign [class="Conky" instance="Conky"] $ws1
 
 # 2. Test
 assign [class="DBeaver" instance="DBeaver"] $ws2
