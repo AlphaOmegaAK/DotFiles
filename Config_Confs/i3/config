@@ -432,3 +432,5 @@ exec --no-startup-id alacritty &
 exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/Wallpapers/abstract-triangles.jpg &
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
+exec --no-startup-id conky -c ~/.config/conky/conky.conf & conky -c ~/.config/conky/conky1.conf
+

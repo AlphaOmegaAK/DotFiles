@@ -42,11 +42,11 @@ Xcursor.size: 24
 *.gruvbox_bg1 :             #282828
 *.gruvbox_bg2 :             #3C3836
 *.gruvbox_bg3 :             #584945
-*.gruvbox_dark_grey :        #928374
-*.gruvbox_light_grey:        #A89984
+*.gruvbox_dark_grey :       #928374
+*.gruvbox_light_grey:       #A89984
 *.gruvbox_dark_orange :     #D65D0E
 *.gruvbox_light_orange :    #FE8019
-*.gruvbox_darker_orange :     #AE6931
+*.gruvbox_darker_orange :   #AE6931
 
 
 *.onedark_black :           #282C34
