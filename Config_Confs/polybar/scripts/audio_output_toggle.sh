@@ -22,14 +22,10 @@ HEADPHONES_B="$(pactl list short sinks | grep $HEADPHONES | cut -f 5)"
 
 if [ "$SPEAKERS_A" == "$RUNNING" ]; then
 	pactl set-default-sink "$HEADPHONES"
-	notify-send -u critical "Switched to Arctis Headphones"
+	notify-send -u normal "Switched to Arctis Headphones"
 	exit 0
 else
 	pactl set-default-sink "$SPEAKERS"
-	notify-send -u critical "Switched to System Speakers"
+	notify-send -u normal "Switched to System Speakers"
 	exit 0
 fi
-
-switch_() {
-
-}

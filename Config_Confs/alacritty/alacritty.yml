@@ -190,7 +190,7 @@ font:
     # family: "Sarasa Mono"
     # family: "Jetbrains Mono"
     style: Italic
-  size: 11.5
+  size: 10
   glyph_offset:
     y: 0
     x: 1

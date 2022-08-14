@@ -202,6 +202,8 @@ assign [class="firefox" instance="Navigator"] $ws1
 assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
 assign [class="Google-chrome" instance="google-chrome"] $ws1
 assign [class="Conky" instance="Conky"] $ws1
+assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] $ws1
+assign [class="jetbrains-idea" instance="jetbrains-idea"] $ws1
 
 # 2. Test
 assign [class="DBeaver" instance="DBeaver"] $ws2
@@ -215,8 +217,6 @@ assign [class="figma-linux" instance="figma-linux"] $ws2
 
 # 6. Dev
 assign [class="Alacritty" instance="Alacritty"] $ws6
-assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] $ws6
-assign [class="jetbrains-idea" instance="jetbrains-idea"] $ws6
 assign [class="Code" instance="code"] $ws6
 assign [class="Eclipse" instance="Eclipse"] $ws6
 assign [class="Emacs" instance="emacs"] $ws6
