@@ -198,7 +198,6 @@ workspace $ws9 output $m2
 
 
 # 1. Web
-assign [class="firefox" instance="Navigator"] $ws1
 assign [class="Firefox Developer Edition" instance="Navigator"]  $ws1
 assign [class="Google-chrome" instance="google-chrome"] $ws1
 assign [class="Conky" instance="Conky"] $ws1
@@ -220,6 +219,7 @@ assign [class="Alacritty" instance="Alacritty"] $ws6
 assign [class="Code" instance="code"] $ws6
 assign [class="Eclipse" instance="Eclipse"] $ws6
 assign [class="Emacs" instance="emacs"] $ws6
+assign [class="firefox" instance="Navigator"] $ws6
 
 # 7. Files
 assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws7

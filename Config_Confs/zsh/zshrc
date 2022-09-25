@@ -1,10 +1,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt SHARE_HISTORY
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
+autoload -U compinit; compinit
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -28,8 +35,6 @@ set -o vi
 # User configuration
 
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -102,6 +107,8 @@ alias dots='nvim ~/Code/System/DotFiles/'
 alias cddf='cd ~/Code/System/DotFiles/'
 alias cdpy='cd ~/Code/Python'
 alias cdja='cd ~/Code/Java'
+
+alias cdbk='cd ~/Documents/Books'
 
 alias cdjs='cd ~/Code/Javascript'
 alias cdht='cd ~/Code/HTML_CSS'
