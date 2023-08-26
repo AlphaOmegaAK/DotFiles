@@ -50,8 +50,6 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-idplayerctl previous
 
 
-# --- Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
 # --- start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
@@ -107,8 +105,6 @@ bindsym $mod+s layout stacking;exec notify-send 'Stacked Layout'
 bindsym $mod+w layout tabbed;exec notify-send 'Tabbed Layout'
 bindsym $mod+e layout toggle split;exec notify-send 'Toggle Split'
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
@@ -219,7 +215,7 @@ assign [class="Alacritty" instance="Alacritty"] $ws6
 assign [class="Code" instance="code"] $ws6
 assign [class="Eclipse" instance="Eclipse"] $ws6
 assign [class="Emacs" instance="emacs"] $ws6
-assign [class="firefox" instance="Navigator"] $ws6
+# assign [class="firefox" instance="Navigator"] $ws6
 
 # 7. Files
 assign [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] $ws7
@@ -279,6 +275,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+shift+r mode "Resize"
 mode "Resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -302,7 +299,32 @@ mode "Resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-bindsym $mod+shift+r mode "Resize"
+
+# --- Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# --- Use $mod + Mouse to drag floating windows to their wanted position
+floating_modifier $mod
+
+# --- Floating mode
+bindsym $mod+shift+m mode "Move" focus floating
+
+mode "Move" {
+	bindsym $mod+Tab focus right
+	bindsym Left  move left
+	bindsym Down  move down
+	bindsym Up    move up
+	bindsym Right move right
+
+	bindsym h     move left
+	bindsym j     move down
+	bindsym k     move up
+	bindsym l     move right
+
+# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
 
 # --- Editor Mode ---
 # So that $Mod (alt) key combinations work in emacs + other idea k
@@ -310,45 +332,45 @@ mode "Editor Mode" {
 # If there are any non-conflicting bindings for I3 list here
 # Workspace Binds
 	bindsym $mod+1 workspace 1
-	bindsym $mod+2 workspace 2
-	bindsym $mod+3 workspace 3
-	bindsym $mod+4 workspace 4
-	bindsym $mod+5 workspace 5
+		bindsym $mod+2 workspace 2
+		bindsym $mod+3 workspace 3
+		bindsym $mod+4 workspace 4
+		bindsym $mod+5 workspace 5
 
-	bindsym $mod+6 workspace 6
-	bindsym $mod+7 workspace 7
-	bindsym $mod+8 workspace 8
-	bindsym $mod+9 workspace 9
-	#bindsy $mod+0 workspace number $ws10
+		bindsym $mod+6 workspace 6
+		bindsym $mod+7 workspace 7
+		bindsym $mod+8 workspace 8
+		bindsym $mod+9 workspace 9
+#bindsy $mod+0 workspace number $ws10
 
-	# Window Movements
-	# move focused container to workspace
-	bindsym $mod+Shift+1 move container to workspace 1
-	bindsym $mod+Shift+2 move container to workspace 2
-	bindsym $mod+Shift+3 move container to workspace 3
-	bindsym $mod+Shift+4 move container to workspace 4
-	bindsym $mod+Shift+5 move container to workspace 5
+# Window Movements
+# move focused container to workspace
+		bindsym $mod+Shift+1 move container to workspace 1
+		bindsym $mod+Shift+2 move container to workspace 2
+		bindsym $mod+Shift+3 move container to workspace 3
+		bindsym $mod+Shift+4 move container to workspace 4
+		bindsym $mod+Shift+5 move container to workspace 5
 
-	bindsym $mod+Shift+6 move container to workspace 6
-	bindsym $mod+Shift+7 move container to workspace 7
-	bindsym $mod+Shift+8 move container to workspace 8
-	bindsym $mod+Shift+9 move container to workspace 9
+		bindsym $mod+Shift+6 move container to workspace 6
+		bindsym $mod+Shift+7 move container to workspace 7
+		bindsym $mod+Shift+8 move container to workspace 8
+		bindsym $mod+Shift+9 move container to workspace 9
 
-	bindsym $mod+Left focus left
-	bindsym $mod+Down focus down
-	bindsym $mod+Up focus up
-	bindsym $mod+Right focus right
+		bindsym $mod+Left focus left
+		bindsym $mod+Down focus down
+		bindsym $mod+Up focus up
+		bindsym $mod+Right focus right
 
-	bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth
+		bindsym Mod1+Tab exec --no-startup-id i3-msg workspace back_and_forth
 
 # Sound
-	bindsym XF86AudioPlay exec playerctl play-pause
-	bindsym XF86AudioPause exec playerctl stop
-	bindsym XF86AudioNext exec playerctl next
-	bindsym XF86AudioPrev exec playerctl previous
+		bindsym XF86AudioPlay exec playerctl play-pause
+		bindsym XF86AudioPause exec playerctl stop
+		bindsym XF86AudioNext exec playerctl next
+		bindsym XF86AudioPrev exec playerctl previous
 
 # Exit Editor Modes
-	bindsym $mod+Escape mode "default"; exec notify-send -u normal "Normal Mode"
+		bindsym $mod+Escape mode "default"; exec notify-send -u normal "Normal Mode"
 }
 
 bindsym $mod+0 mode "Editor Mode"; exec notify-send -u normal "Editor Mode"
@@ -374,13 +396,13 @@ set $sysmenu (r)estart - (l)ock - l(o)gout - (s)uspend - re(b)oot - po(w)eroff -
 
 mode "$sysmenu" {
 	bindsym r restart
-	bindsym l exec "~/.config/i3lock/i3lock.sh", mode "default"
-	bindsym o exit
-	bindsym w exec "systemctl poweroff"
-	bindsym b exec "systemctl reboot"
-	bindsym s exec "systemctl suspend", mode "default"
-	bindsym Return mode "default"; exec notify-send -u normal "Power Menu Exited"
-	bindsym Escape mode "default"; exec notify-send -u normal "Power Menu Exited"
+		bindsym l exec "~/.config/i3lock/i3lock.sh", mode "default"
+		bindsym o exit
+		bindsym w exec "systemctl poweroff"
+		bindsym b exec "systemctl reboot"
+		bindsym s exec "systemctl suspend", mode "default"
+		bindsym Return mode "default"; exec notify-send -u normal "Power Menu Exited"
+		bindsym Escape mode "default"; exec notify-send -u normal "Power Menu Exited"
 }
 
 bindsym Mod1+Control+l mode "$sysmenu"; exec notify-send -u normal "Power Menu"

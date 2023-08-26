@@ -76,6 +76,8 @@ alias zshconf='nvim ~/.zshrc'
 alias fishconf='nvim ~/.config/fish/config.fish'
 alias alacconf='nvim ~/.config/alacritty/alacritty.yml'
 alias tmuxconf='nvim ~/.tmux.conf'
+alias hyprconf="v ~/.config/hypr/hyprland.conf"
+
 alias iscript='cd ~/Code/Systetm/Scripts/'
 
 # Git
@@ -128,16 +130,21 @@ alias cddl='cd ~/Downloads'
 alias intellij='intellij-idea-community'
 alias dev='~/Code/System/DotFiles/Env/dev-tmux.sh'
 
+# Check open ports
 alias lsopenports='sudo lsof -i -P -n | grep LISTEN'
+alias ssopenports='ss -lntu'
+
+
 alias showports='netstat -tuplen'
 alias netopenports='netstat -lntu'
-alias ssopenports='ss -lntu'
 alias showports='netstat -tuplen'
 
 alias pwroff='shutdown -h now'
 alias pwrcl='shutdown -c'
 alias reboot='shutdown -r'
 
+alias vpnDown='wg-quick down azirevpn-es-mad'
+alias vpnUp='wg-quick up azirevpn-es-mad'
 
 function cs() {
 	cd $1 &&

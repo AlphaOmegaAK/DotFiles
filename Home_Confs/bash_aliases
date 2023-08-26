@@ -18,7 +18,7 @@ alias disk_report="df -P -kHl"
 
 # Update + Upgrade
 
-alias update='sudo apt update -y; sudo apt full-upgrade -y'
+alias debupdate="sudo apt update -y; sudo apt full-upgrade -y"
 
 # Change directory shortcuts
 alias ..="cd .."
@@ -38,6 +38,7 @@ alias zshconf="nvim ~/.zshrc"
 alias fishconf="nvim ~/.config/fish/config.fish"
 alias alacconf="nvim ~/.config/alacritty/alacritty.yml"
 alias vconf="v ~/.config/nvim"
+alias hypconf="v ~/.config/hypr/hyprland.conf"
 
 alias del="rm -rf"
 alias v="nvim"
@@ -67,6 +68,5 @@ else
 
     alias cpv='rsync -ah --info=progress2'
 fi
-end
 
 

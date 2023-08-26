@@ -159,7 +159,6 @@ cursor:
 
 draw_bold_text_with_bright_colors: true
 
-# windows.opacity: 0.85
 
 # Window Decorations
 window:
@@ -168,33 +167,33 @@ window:
     lines: 50
   #decorations: none
   decorations: full
-  # opacity: 0.85
+  opacity: 0.85
   padding:
     x: 15
     y: 10
 
 font:
   normal:
-    family: "Iosevka"
+    # family: "Iosevka"
     # family: "Sarasa Mono"
-    # family: "Jetbrains Mono"
+    family: "Jetbrains Mono"
   bold:
-    family: "Iosevka"
+    # family: "Iosevka"
     style: bold
     #family: "Fira Code"
     # family: "Sarasa Mono"
-    # family: "Jetbrains Mono"
+    family: "Jetbrains Mono"
   italic:
-    family: "Iosevka"
+    # family: "Iosevka"
     #family: "Fira Mono"
     # family: "Sarasa Mono"
-    # family: "Jetbrains Mono"
+    family: "Jetbrains Mono"
     style: Italic
   size: 10
   glyph_offset:
     y: 0
     x: 1
-  use_thin_strokes: true
+  # use_thin_strokes: true
   offset:
     x: 0 # Letter spacing
     y: 2 # Line spacing
