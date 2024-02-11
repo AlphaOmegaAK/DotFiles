@@ -1,9 +1,18 @@
 set hlsearch
+set sneak
+set ignorecase
+set smartcase
+
 let mapleader = '<space>'
-nnoremap ,c :action GotoClass<CR>
+
 inoremap jk <Esc>
+
+nnoremap ,c :action GotoClass<CR>
+
 nnoremap L $
 nnoremap H 0
+vnoremap L $
+vnoremap H 0
 
 nnoremap ; :
 nnoremap : ;
@@ -16,3 +25,4 @@ noremap <space>P "*P
 nnoremap / :action Find<cr>
 
 nnoremap <cr> :nohlsearch<cr>
+
